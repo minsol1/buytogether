@@ -2,11 +2,11 @@
 
 {% block content %}
 <ul class="navbar__menu">
-    <li><a href="necessity/">생필품</a></li>
-    <li><a href="ott/">ott</a></li>
-    <li><a href="delivery/">배달</a></li>
-    <li><a href="food/">식재료</a></li>
+    <li><a href="{% url 'category' 'necessity' %}">생필품</a></li>
+    <li><a href="{% url 'category' 'ott' %}">ott</a></li>
+    <li><a href="{% url 'category' 'delivery' %}">배달</a></li>
+    <li><a href="{% url 'category' 'food' %}">식재료</a></li>
 </ul>
 
-<a href="create/">새글 작성</a>
+<a href="create">새글 작성</a>
 {% endblock %}

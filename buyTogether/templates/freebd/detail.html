@@ -1,0 +1,19 @@
+{{detail.title}}
+
+{{detail.body}}
+
+{{detail.writeDate}}
+
+<h3>댓글</h3>
+
+<form method="POST" action="{% url 'create_comment' detail.id %}">
+    {% csrf_token %}
+    {{comment_form}}
+    <input type="submit">
+</form>
+
+{% for comment in detail.comment_set.all %}
+    <hr>
+    <p>{{ comment.body }}</p>
+    <hr>
+{% endfor %}

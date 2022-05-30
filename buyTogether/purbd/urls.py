@@ -2,12 +2,10 @@ from django.urls import path
 from purbd import views
 
 urlpatterns = [
-    path('',views.home),
-    path('necessity/',views.necessity),
-    path('ott/',views.ott),
-    path('food/',views.food),
-    path('delivery/',views.delivery),
-    path('create/',views.create),
+    path('',views.home , name='home'),
+    path('category/<str:category>',views.p_category, name='category'),
+    path('create',views.create , name='create'),
+    path('detail/<int:post_id>',views.detail,name='detail'),
   #  path('',views.createpur),
 
 ]

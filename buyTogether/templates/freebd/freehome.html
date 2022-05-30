@@ -1,6 +1,11 @@
 {% extends 'nav.html' %}
 
 {% block content %}
-free
+{% for post in posts %}
+<h3><a href="{% url 'freeDetail' post.id %}">{{post.title}}</a></h3>
+{{post.body}}
+{{post.writeDate}}
+{% endfor %}
+
 <a href="freeCreate/"> 새글작성</a>
 {% endblock %}

@@ -1,5 +1,9 @@
 {% extends 'nav.html' %}
 
 {% block content %}
-create
+<form method="POST" action="{% url 'create' %}">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit">
+</form>
 {% endblock %}

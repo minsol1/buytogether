@@ -5,8 +5,8 @@ class Free(models.Model):
     title = models.CharField(max_length=200)
     body = models.TextField()
     writeDate = models.DateTimeField(auto_now_add=True)
-    good = models.IntegerField()
-    id = models.AutoField(primary_key=True)
+    # good = models.IntegerField()
+    # id = models.AutoField(primary_key=True)
     def __str__(self):
         return self.title
     
