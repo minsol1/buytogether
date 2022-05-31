@@ -1,8 +1,15 @@
 {% extends 'nav.html' %}
-
+<!-- 글목록페이지입니다 -->
 {% block content %}
 {% for post in posts %}
 <h2><a href="{% url 'detail' post.id %}">{{post.title}}</a></h2>
-{{post.category}}
+<span>닉네임</span> <span>레벨</span>
+<span>
+    {{post.writeDate}}
+</span>
+<span>{{post.people}}/{{post.wpeople}}</span>
+<span>{{post.price}}</span>
+<span>위치</span>
+<span>{{post.good}}</span>
 {% endfor %}
 {% endblock %}

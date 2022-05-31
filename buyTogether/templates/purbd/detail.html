@@ -1,5 +1,18 @@
-{{detail.title}}
+{% extends 'nav.html' %}
 
-{{detail.body}}
+{% block content %}
 
-{{detail.writeDate}}
+<h3>
+    {{detail.title}}
+</h3>
+<span>닉네임</span> <span>레벨</span> <span>{{detail.writeDate}}</span>
+<p>{{detail.body}}</p>
+
+<span>{{detail.people}}/{{detail.wpeople}}</span>
+<span>가격 : {{detail.price}}원 </span>
+<span>위치</span>
+<span>{{detail.good}}</span>
+
+<input type="button" value="참여하기">
+
+{% endblock %}

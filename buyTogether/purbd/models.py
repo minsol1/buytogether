@@ -16,7 +16,7 @@ class Pur(models.Model):
                                  default=0)
     wpeople = models.IntegerField(blank=False,
                                  null=False,)
-    peopole = models.IntegerField(null=True,default=1)
+    people = models.IntegerField(null=True,default=1)
     price = models.IntegerField(blank=False,
                                  null=False,)
     location=models.CharField(max_length=300)

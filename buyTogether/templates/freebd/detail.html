@@ -1,8 +1,15 @@
-{{detail.title}}
+<h3>
+    {{detail.title}}
+</h3>
+<span>닉네임</span>
+<span>
+    {{detail.writeDate}}
+</span>
 
-{{detail.body}}
+<p>
+    {{detail.body}}
+</p>
 
-{{detail.writeDate}}
 
 <h3>댓글</h3>
 
@@ -14,6 +21,7 @@
 
 {% for comment in detail.comment_set.all %}
     <hr>
+    <span>닉네임</span> <span>{{comment.writeDate}}</span>
     <p>{{ comment.body }}</p>
     <hr>
 {% endfor %}

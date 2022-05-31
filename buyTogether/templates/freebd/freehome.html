@@ -2,9 +2,13 @@
 
 {% block content %}
 {% for post in posts %}
+
 <h3><a href="{% url 'freeDetail' post.id %}">{{post.title}}</a></h3>
-{{post.body}}
-{{post.writeDate}}
+<span>닉네임</span> <span>레벨</span>
+<span>
+    {{post.writeDate}}
+</span>
+
 {% endfor %}
 
 <a href="freeCreate/"> 새글작성</a>

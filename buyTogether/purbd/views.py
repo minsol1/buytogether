@@ -4,7 +4,11 @@ from .models import Pur
 # Create your views here.
 
 def home(request):
-    return render(request,'purbd/home.html')
+    return render(request,'home.html')
+def phome(request):
+    posts = Pur.objects.all()
+    return render(request,'purbd/home.html',{'posts':posts})
+
 
 def p_category(request,category):
     categorys={'food':0,'necessity':1,'ott':2,'delivery':3}
