@@ -20,6 +20,7 @@ class Pur(models.Model):
     price = models.IntegerField(blank=False,
                                  null=False,)
     location=models.CharField(max_length=300)
+    photo = models.ImageField(blank=True,null=True,upload_to='pur_photo')
     # lat = models.FloatField() #위도
     # long = models.FloatField() #경도
     good = models.IntegerField(null=True,default=0)

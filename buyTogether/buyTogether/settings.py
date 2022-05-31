@@ -128,6 +128,12 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+import os
+#업로드한 테이터가 저장될 경로
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+#업로드한 파일접근할수잇는 경로지정
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

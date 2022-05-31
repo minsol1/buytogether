@@ -7,6 +7,9 @@
 </h3>
 <span>닉네임</span> <span>레벨</span> <span>{{detail.writeDate}}</span>
 <p>{{detail.body}}</p>
+{% if detail.photo.url %}
+	<img src="{{ detail.photo.url }}" alt="">
+{% endif %}
 
 <span>{{detail.people}}/{{detail.wpeople}}</span>
 <span>가격 : {{detail.price}}원 </span>

@@ -4,7 +4,7 @@ from .models import Free,Comment
 class Freemodelform(forms.ModelForm):
 	class Meta:
 		model = Free
-		fields = ['title','body']
+		fields = ['title','body','photo']
 
 class CommentForm(forms.ModelForm):
 	class Meta:

@@ -9,7 +9,9 @@
 <p>
     {{detail.body}}
 </p>
-
+{% if detail.photo.url %}
+	<img src="{{ detail.photo.url }}" alt="">
+{% endif %}
 
 <h3>댓글</h3>
 
