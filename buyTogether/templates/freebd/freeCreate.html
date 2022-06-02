@@ -3,7 +3,13 @@
 {% block content %}
 <form method="POST" action="{% url 'freeCreate' %}">
     {% csrf_token %}
-    {{form.as_p}}
+    <!-- {{form.as_p}} -->
+    <h3>제목</h3>
+    {{form.title}}
+    <h3>body</h3>
+    {{form.body}}
+    <h3>사진</h3>
+    {{form.photo}}
     <input type="submit">
 </form>
 {% endblock %}

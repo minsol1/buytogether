@@ -3,7 +3,23 @@
 {% block content %}
 <form method="POST" action="{% url 'create' %}">
     {% csrf_token %}
-    {{form.as_p}}
+    <!-- {{form.as_p}} -->
+    <h3>제목</h3>
+    {{form.title}}
+    <h3>body</h3>
+    {{form.body}}
+    <h3>date</h3>
+    {{form.date}}
+    <h3>category</h3>
+    {{form.category}}
+    <h3>모집인원</h3>
+    {{form.wpeople}}
+    <h3>가격</h3>
+    {{form.price}}
+    <h3>장소</h3>
+    {{form.location}}
+    <h3>사진</h3>
+    {{form.photo}}
     <input type="submit">
 </form>
 {% endblock %}

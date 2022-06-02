@@ -21,7 +21,7 @@ from django.conf.urls.static import static # static 사용하기위해
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('purbd.urls')),
-    # path('accounts/',include('accounts.urls')),
+    path('accounts/',include('accounts.urls')),
     path('freehome/',include('freebd.urls')),
     path('profile/',include('users.urls')),
 ]
