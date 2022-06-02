@@ -1,15 +1,31 @@
+
 {% extends 'nav.html' %}
 
 {% block content %}
-{% for post in posts %}
 
-<h3><a href="{% url 'freeDetail' post.id %}">{{post.title}}</a></h3>
-<span>닉네임</span> <span>레벨</span>
-<span>
-    {{post.writeDate}}
-</span>
+<table>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일</th>
+        <th>조회수</th>
+        <th>댓글수</th>
+    </tr>
+{% for post in posts reversed %}
+    <tr>
+        <td>{{post.id}}</td>
+        <td><a href="{% url 'freeDetail' post.id %}">{{post.title}}</a></td>
+        <td> 닉네임</td>
+        <td> {{post.writeDate}}</td>
+        <td> 1</td>
+        <td> 2</td> 
+    </tr>
 
 {% endfor %}
 
-<a href="freeCreate/"> 새글작성</a>
+</table>
+
+<button type="button" onClick="location.href='freeCreate'">새글작성</button>
+
 {% endblock %}
