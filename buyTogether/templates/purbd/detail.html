@@ -1,19 +1,44 @@
 {% extends 'nav.html' %}
 
 {% block content %}
-    <h3>
-        {{detail.title}}
-    </h3>
-    <span>닉네임</span> <span>레벨</span> <span>{{detail.writeDate}}</span>
-    <p>{{detail.body}}</p>
+
+<div id="purbd_detail_container">
     {% if detail.photo.url %}
-        <img src="{{ detail.photo.url }}" alt="">
+        <img src="{{ detail.photo.url }}" alt="" id="purbd_detail_img">
     {% endif %}
 
-    <span>{{detail.people}}/{{detail.wpeople}}</span>
-    <span>가격 : {{detail.price}}원 </span>
-    <span>위치</span>
-    <span>{{detail.good}}</span>
+    <table style="width: 1000px; margin-top: 20px;">
+            <tr>
+                <td style="width: 30px;"><img id="purbd_detail_lev"></td>
+                <td style="font-size: 20px; text-align: left; padding-left: 10px;">닉네임 레벨</td>
+                <td style="font-size: 13px; text-align: right;">작성일 : {{detail.writeDate}}</td>
+            </tr>
+    </table>
 
-    <input type="button" value="참여하기">
+    <hr style="height: 0.5px; border: none; background-color: lightgrey; margin-bottom: 20px; margin: 13px 0;">
+
+    <h3 id="purbd_detail_title">{{detail.title}}</h3>
+
+    <h2 id="purbd_detail_price">{{detail.price}}원</h2>
+    
+    <p style="font-size: 20px;">{{detail.body}}</p>
+
+    <!-- <hr style="height: 0.5px; border: none; background-color: lightgrey; margin-bottom: 20px; margin: 13px 0;"> -->
+
+    <table style="width: 1000px; text-align: center; border-collapse: collapse;">
+        <tr>
+            <td class="purbd_detail_td">거래 위치</td>
+            <td class="purbd_detail_table_line, purbd_detail_td">현재 인원</td>
+            <td class="purbd_detail_td">좋아요 수</td>
+        </tr>
+        <tr>
+            <td class="purbd_detail_td">위치</td>
+            <td class="purbd_detail_table_line, purbd_detail_td">
+                <div style="margin-bottom: 5px;">{{detail.people}}/{{detail.wpeople}}</div>
+                <input type="button" value="참여하기">
+            </td>
+            <td class="purbd_detail_td">{{detail.good}}</td>
+        </tr>
+    </table>
+</div>
 {% endblock %}
