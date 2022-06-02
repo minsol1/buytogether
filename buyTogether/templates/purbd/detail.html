@@ -2,7 +2,7 @@
 
 {% block content %}
 <div id="purbd_detail_container">
-    {% if detail.photo.url %}
+    {% if detail.photo %}
         <img src="{{ detail.photo.url }}" alt="" id="purbd_detail_img">
     {% endif %}
 
@@ -14,14 +14,10 @@
             </tr>
     </table>
 
-<<<<<<< HEAD
-<span>{{detail.people}}/{{detail.wpeople}}</span>
-<span>가격 : {{detail.price}}원 </span>
-<span>위치</span>
+
 <input type="button" value="좋아요 {{detail.good}}">
-=======
+
     <hr style="height: 0.5px; border: none; background-color: lightgrey; margin-bottom: 20px; margin: 13px 0;">
->>>>>>> 0df00bb8e02ea98557cd4527923b23286e82280f
 
     <h3 id="purbd_detail_title">{{detail.title}}</h3>
 

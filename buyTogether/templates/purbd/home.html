@@ -1,18 +1,46 @@
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 {% extends 'nav.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static '/staticstyle.css' %}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
 <!-- 카테고리 페이지입니다 -->
 {% block content %}
+<div class="container">
+   <div>
+        <select>
+            <option hidden>모집상태</option>
+            <option>모집중</option>
+            <option>모집완료</option>
+        </select> 
+        <form class="navbar-search pBoard_inline" >
+            <input type="text" class="search-query" placeholder="검색할 내용을 입력하세요.">
+            <button type="button" class="btn text-white" style="background-color: #e98197;">검색</button>
 
-{% for post in posts %}
-<h2><a href="{% url 'detail' post.id %}">{{post.title}}</a></h2>
-<span>닉네임</span> <span>레벨</span>
-<span>
-    {{post.writeDate}}
-</span>
-<span>{{post.people}}/{{post.wpeople}}</span>
-<span>{{post.price}}원</span>
-<span>위치</span>
-<span>{{post.good}}</span>
-{% endfor %}
+          </form>
 
-<a href="create">새글 작성</a>
-{% endblock %}
+      
+    </div>
+    
+    <div>
+        {% for post in posts %}
+        <h2><a href="{% url 'detail' post.id %}">{{post.title}}</a></h2>
+        <span>닉네임</span> <span>레벨</span>
+        <span>
+            {{post.writeDate}}
+        </span>
+        <span>{{post.people}}/{{post.wpeople}}</span>
+        <span>{{post.price}}원</span>
+        <span>위치</span>
+        <span>{{post.good}}</span>
+        {% endfor %}
+    
+    </div>
+    
+    <button type="button" onClick="location.href='create'">새글작성</button>
+    {% endblock %}
+</div>
