@@ -6,26 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet"  type="text/css" href="{% static 'style.css' %}">
 </head>
-<body>
-    <a href="/">buytogether</a>
-    <ul class="navbar__menu">
-        <li><a href="">로그인(아직X)</a></li>
-        <li><a href="/purhome">거래게시판</a></li>
-        <li><a href="/freehome">자유게시판</a></li>
-        <li><a href="">채팅(아직X)</a></li>
-        <li><a href="">AI챗봇(아직X)</a></li>
-        <li><a href="/profile">Profile</a></li>
-    </ul>
+    <body>
+    <div class="navImage">
 
-    <ul class="navbar__menu">
-        <li><a href="{% url 'category' 'necessity' %}">생필품</a></li>
-        <li><a href="{% url 'category' 'ott' %}">ott</a></li>
-        <li><a href="{% url 'category' 'delivery' %}">배달</a></li>
-        <li><a href="{% url 'category' 'food' %}">식재료</a></li>
-    </ul>
+    </div>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/home">Buy Together</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">로그인(아직X)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/freehome">자유게시판</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">채팅(아직X)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">AI챗봇(아직X)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile">프로필</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  거래게시판
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/purhome">전체</a></li>
+                  <li><a class="dropdown-item" href="{% url 'category' 'necessity' %}">생필품</a></li>
+                  <li><a class="dropdown-item" href="{% url 'category' 'ott' %}">OTT</a></li>
+                  <li><a class="dropdown-item" href="{% url 'category' 'delivery' %}">배달</a></li>
+                  <!-- <li><hr class="dropdown-divider"></li> -->
+                  <li><a class="dropdown-item" href="{% url 'category' 'food' %}">식료품</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav> 
+
     {% block content %}
     {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+
 </body>
 </html>

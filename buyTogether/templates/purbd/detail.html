@@ -1,21 +1,19 @@
 {% extends 'nav.html' %}
 
 {% block content %}
+    <h3>
+        {{detail.title}}
+    </h3>
+    <span>닉네임</span> <span>레벨</span> <span>{{detail.writeDate}}</span>
+    <p>{{detail.body}}</p>
+    {% if detail.photo.url %}
+        <img src="{{ detail.photo.url }}" alt="">
+    {% endif %}
 
-<h3>
-    {{detail.title}}
-</h3>
-<span>닉네임</span> <span>레벨</span> <span>{{detail.writeDate}}</span>
-<p>{{detail.body}}</p>
-{% if detail.photo.url %}
-	<img src="{{ detail.photo.url }}" alt="">
-{% endif %}
+    <span>{{detail.people}}/{{detail.wpeople}}</span>
+    <span>가격 : {{detail.price}}원 </span>
+    <span>위치</span>
+    <span>{{detail.good}}</span>
 
-<span>{{detail.people}}/{{detail.wpeople}}</span>
-<span>가격 : {{detail.price}}원 </span>
-<span>위치</span>
-<span>{{detail.good}}</span>
-
-<input type="button" value="참여하기">
-
+    <input type="button" value="참여하기">
 {% endblock %}
