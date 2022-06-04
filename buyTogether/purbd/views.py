@@ -1,13 +1,19 @@
 from django.shortcuts import get_object_or_404, redirect, render
+from django.core.paginator import Paginator
 from .forms import Purmodelform
 from .models import Pur
 # Create your views here.
 
 def home(request):
     return render(request,'home.html')
+
 def phome(request):
-    posts = Pur.objects.all()
-    return render(request,'purbd/home.html',{'posts':posts})
+    purchase = Pur.objects
+    post_list = purchase.all().order_by('-id') #최신순 나열
+    paginator = Paginator(post_list, 9) # 6개씩 잘라내기
+    page = request.GET.get('page') # 페이지 번호 알아오기
+    posts = paginator.get_page(page) # 페이지 번호 인자로 넘겨주기
+    return render(request,'purbd/home.html',{'purchase':purchase, 'posts':posts})
 
 
 def p_category(request,category):
