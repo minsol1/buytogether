@@ -12,14 +12,17 @@
     border-radius: 10px 10px;
 
     padding: 20px;
-    margin: 0 auto;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 #purbd_detail_img {
-    width: 1000px;
+    width: 960px;
     height: 600px;
     border-radius: 10px 10px;
     object-fit: cover;
     background-color: lightgrey;
+    margin-bottom: 20px;
 }
 #purbd_detail_lev {
     width: 30px;
@@ -33,16 +36,17 @@
 }
 #purbd_detail_title {
     font-size: 50px;
-    margin: 0;
+    margin: 15px 0 0 0;
 }
 #purbd_detail_price {
     font-size: 30px;
     margin: 0;
 }
-.purbd_detail_table_line {
-    border-right: 0.5px solid lightgrey;
-    border-left: 0.5px solid lightgrey;
-}
 .purbd_detail_td {
+    width: 320px;
     padding: 5px;
+}
+.purbd_detail_table_line {
+    border-right: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
 }

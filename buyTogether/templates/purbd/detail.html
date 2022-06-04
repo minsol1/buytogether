@@ -6,40 +6,40 @@
         <img src="{{ detail.photo.url }}" alt="" id="purbd_detail_img">
     {% endif %}
 
-    <table style="width: 1000px; margin-top: 20px;">
+    <table style="width: 960px; border-bottom: 1px solid lightgrey;">
             <tr>
-                <td style="width: 30px;"><img id="purbd_detail_lev"></td>
-                <td style="font-size: 20px; text-align: left; padding-left: 10px;">닉네임 레벨</td>
-                <td style="font-size: 13px; text-align: right;">작성일 : {{detail.writeDate}}</td>
+                <td style="width: 30px; padding-bottom: 15px;"><img id="purbd_detail_lev"></td>
+                <td style="font-size: 20px; text-align: left; padding-left: 10px; padding-bottom: 15px;">닉네임 레벨</td>
+                <td style="font-size: 13px; text-align: right; padding-bottom: 7px;">작성일 : {{detail.writeDate}}</td>
             </tr>
     </table>
 
-
-<input type="button" value="좋아요 {{detail.good}}">
-
-    <hr style="height: 0.5px; border: none; background-color: lightgrey; margin-bottom: 20px; margin: 13px 0;">
+    {% comment %} <hr style="height: 1px; border: none; background-color: grey; margin-bottom: 20px; margin: 15px 0;"> {% endcomment %}
 
     <h3 id="purbd_detail_title">{{detail.title}}</h3>
 
     <h2 id="purbd_detail_price">{{detail.price}}원</h2>
     
-    <p style="font-size: 20px;">{{detail.body}}</p>
+    <p style="font-size: 20px;  margin: 20px 0;">{{detail.body}}</p>
 
     <!-- <hr style="height: 0.5px; border: none; background-color: lightgrey; margin-bottom: 20px; margin: 13px 0;"> -->
 
-    <table style="width: 1000px; text-align: center; border-collapse: collapse;">
+    <table style="width: 960px; text-align: center; border-collapse: collapse;">
         <tr>
-            <td class="purbd_detail_td">거래 위치</td>
-            <td class="purbd_detail_table_line, purbd_detail_td">현재 인원</td>
-            <td class="purbd_detail_td">좋아요 수</td>
+            <td class="purbd_detail_td">이미지</td>
+            <td class="purbd_detail_td, purbd_detail_table_line">현재 인원</td>
+            <td class="purbd_detail_td">이미지</td>
         </tr>
         <tr>
             <td class="purbd_detail_td">위치</td>
-            <td class="purbd_detail_table_line, purbd_detail_td">
+            <td class="purbd_detail_td, purbd_detail_table_line">
                 <div style="margin-bottom: 5px;">{{detail.people}}/{{detail.wpeople}}</div>
                 <input type="button" value="참여하기">
             </td>
-            <td class="purbd_detail_td">{{detail.good}}</td>
+            <td class="purbd_detail_td">
+                <div style="margin-bottom: 5px;">{{detail.good}}</div>
+                <input type="button" value="좋아요">
+            </td>
         </tr>
     </table>
 </div>
