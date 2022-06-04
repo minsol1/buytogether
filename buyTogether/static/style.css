@@ -46,3 +46,10 @@
 .purbd_detail_td {
     padding: 5px;
 }
+
+/* ---------nav---------- */
+.nav_change_color:hover {
+    color: palevioletred;
+}
+
+/* ---------create---------- */
