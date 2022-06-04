@@ -12,7 +12,7 @@ class Purmodelform(forms.ModelForm):
 			),
 			'body' : forms.TextInput(
 				attrs={'class': 'form-control', 'style': 'width: 400px', 'placeholder': '내용을 입력하세요.'}
-			),ㄴㄴ
+			),
 			'wpeople' : forms.TextInput(
 				attrs={'class': 'form-control', 'style': 'width: 400px', 'placeholder': '모집인원을 입력하세요.'}
 			),
