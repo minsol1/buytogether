@@ -1,0 +1,17 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+<div>
+    <form method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+        {{form.userID}}
+        {{form.password}}
+        <input type="password" name="password2">
+        {{form.nickname}}
+        <input type="submit" value="회원가입">
+        <div class="signup">
+            이미 회원인가요? <a href="{% url 'login' %}">로그인</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,23 +1,41 @@
 from django.shortcuts import redirect, render
 from django.contrib import auth
+from django.contrib.auth.models import User
+from django.contrib.auth import login, authenticate
+from .forms import Userform
+from .models import User
 # Create your views here.
 
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = auth.authenticate(request,username=username,password=password)
+        user = auth.authenticate(request, username=username, password=password)
         if user is not None:
-            auth.login()
+            auth.login(request, user)
             return redirect('home')
         else:
-            render(request,'accounts/bad_login.html')
+            return render(request, 'accounts/login.html')
     else:
-        return render(request,'accounts/login.html')
-
-def join(request):
-    return render(request,'accounts/join.html')
+        return render(request, 'accounts/login.html')
 
 def logout(request):
     auth.logout(request)
     return redirect('home')
+
+def signup(request):
+    if request.method == 'POST':
+        form = Userform(request.POST)
+
+        if request.POST['password'] == request.POST['password2']:
+            user = User.objects.create_user(
+                userID = request.POST['userID'],
+                username = request.POST['nickname'],
+                password = request.POST['password'],
+            )
+            auth.login(request, user)
+            return redirect('home')
+        return render(request, 'accounts/signup.html')
+    else:
+        form = Userform()
+    return render(request, 'accounts/signup.html',{'form':form})
