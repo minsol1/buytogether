@@ -1,29 +1,37 @@
-<h3>
-    {{detail.title}}
-</h3>
-<span>닉네임</span>
-<span>
-    {{detail.writeDate}}
-</span>
+{% extends 'nav.html' %}
 
-<p>
-    {{detail.body}}
-</p>
-{% if detail.photo %}
-	<img src="{{ detail.photo.url }}" alt="">
-{% endif %}
+{% block content %}
+<div class="detail_container">
+    <table style="width: 930px; border-bottom: 1px solid lightgrey;">
+        <tr>
+            <td style="width: 30px; padding: 0 0 15px 2px;"><img class="detail_lev"></td>
+            <td style="font-size: 20px; text-align: left; padding-left: 10px; padding-bottom: 15px;">닉네임 레벨</td>
+        </tr>
+    </table>
+    
+    <div style="font-size: 13px; text-align: right;">작성일 : {{detail.writeDate}}</div>
 
-<h3>댓글</h3>
+    <h3 class="detail_title">{{detail.title}}</h3>
 
-<form method="POST" action="{% url 'create_comment' detail.id %}">
-    {% csrf_token %}
-    {{comment_form}}
-    <input type="submit">
-</form>
+    {% if detail.photo %}
+    <img src="{{ detail.photo.url }}" alt="" class="detail_img">
+    {% endif %}
 
-{% for comment in detail.comment_set.all %}
-    <hr>
-    <span>닉네임</span> <span>{{comment.writeDate}}</span>
-    <p>{{ comment.body }}</p>
-    <hr>
-{% endfor %}
+    <p style="word-wrap: break-word; font-size: 20px; margin: 20px 0;">{{detail.body}}</p>
+
+    <hr style="width: 930px; margin: 20px 0;">
+
+    <form method="POST" action="{% url 'create_comment' detail.id %}">
+        {% csrf_token %}
+        {{comment_form.body}}
+        <input type="submit">
+    </form>
+
+    {% for comment in detail.comment_set.all %}
+        <hr style="width: 930px; margin: 20px 0;">
+        <span>닉네임</span> <span>{{comment.writeDate}}</span>
+        <p>{{ comment.body }}</p>
+    {% endfor %}
+    <hr style="width: 930px; margin: 20px 0;">
+</div>
+{% endblock %}

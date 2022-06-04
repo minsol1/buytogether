@@ -4,24 +4,27 @@
 /* 그리고 섞이면 복잡하니까 주석으로 영역나눠서 작업해주세영 */
 /* ---------파트명---------- */
 
-/* ---------purbd_detail---------- */
-#purbd_detail_container {
+/* ---------detail---------- */
+.detail_container {
     width: 1000px;
-    border: 1px solid;
+    /* border: 1px solid;
     border-color: lightgrey;
-    border-radius: 10px 10px;
+    border-radius: 10px 10px; */
 
-    padding: 20px;
-    margin: 0 auto;
+    padding: 35px;
+    /* margin-top: 20px; */
+    margin-left: auto;
+    margin-right: auto;
 }
-#purbd_detail_img {
-    width: 1000px;
+.detail_img {
+    width: 930px;
     height: 600px;
     border-radius: 10px 10px;
     object-fit: cover;
     background-color: lightgrey;
+    margin-top: 20px;
 }
-#purbd_detail_lev {
+.detail_lev {
     width: 30px;
     height: 30px;
     border-radius: 25px 25px;
@@ -31,21 +34,39 @@
     justify-content: center;
     align-items: center;
 }
-#purbd_detail_title {
+.detail_title {
     font-size: 50px;
-    margin: 0;
+    margin: 15px 0 0 0;
 }
 #purbd_detail_price {
     font-size: 30px;
     margin: 0;
 }
-.purbd_detail_table_line {
-    border-right: 0.5px solid lightgrey;
-    border-left: 0.5px solid lightgrey;
-}
 .purbd_detail_td {
+    width: 310px;
     padding: 5px;
 }
+
+.purbd_detail_table_line {
+    border-right: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+}
+
+
+/* ---------join---------- */
+.join_tag {
+    width: 400px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+.join_input {
+    width: 400px;
+    height: 50px;
+    
+    margin: 0 265px 20px 265px;
+}   
+
 
 /* ---------font---------- */
 
@@ -226,3 +247,4 @@
   -ms-transform: translateX(30px);
   transform: translateX(30px);
 }
+
