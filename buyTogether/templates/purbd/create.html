@@ -1,25 +1,48 @@
 {% extends 'nav.html' %}
 
 {% block content %}
-<form method="POST" action="{% url 'create' %}">
-    {% csrf_token %}
-    <!-- {{form.as_p}} -->
-    <h3>제목</h3>
-    {{form.title}}
-    <h3>body</h3>
-    {{form.body}}
-    <h3>date</h3>
-    {{form.date}}
-    <h3>category</h3>
-    {{form.category}}
-    <h3>모집인원</h3>
-    {{form.wpeople}}
-    <h3>가격</h3>
-    {{form.price}}
-    <h3>장소</h3>
-    {{form.location}}
-    <h3>사진</h3>
-    {{form.photo}}
-    <input type="submit">
-</form>
+<div class="container-fluid">
+   <h3>게시판 글 작성</h3>
+		<form method="POST" role="form" action="{% url 'create' %}">
+        {% csrf_token %}
+        <!-- {{form.as_p}} -->
+        <table>
+            <thead>
+                <tr bgcolor="#BDBDBD" font color="white">
+                    <th>게시판</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>글 제목</td>
+                    <td>{{form.title}}</td>
+                </tr>
+                <tr>
+                    <td>글 내용</td>
+                    <td>{{form.body}}</td>
+                </tr>
+                <tr>
+                    <td>카테고리</td>
+                    <td>{{form.category}}</td>
+                </tr>
+                <tr>
+                    <td>모집인원</td>
+                    <td>{{form.wpeople}}</td>
+                </tr>
+                <tr>
+                    <td>거래장소</td>
+                    <td>{{form.location}}</td>
+                </tr>
+                <tr>
+                    <td>사진</td>
+                    <td>{{form.photo}}</td>
+                </tr>
+                <tr>
+                    <td><input type="submit" class="btn btn-primary" placeholder="작성">
+                    </input></td>           
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
 {% endblock %}
