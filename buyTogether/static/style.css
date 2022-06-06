@@ -46,12 +46,10 @@
     width: 310px;
     padding: 5px;
 }
-
 .purbd_detail_table_line {
     border-right: 1px solid lightgrey;
     border-left: 1px solid lightgrey;
 }
-
 
 /* ---------join---------- */
 .join_tag {
@@ -65,6 +63,7 @@
     height: 50px;
     
     margin: 0 265px 20px 265px;
+
 }   
 
 
