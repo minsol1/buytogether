@@ -24,5 +24,7 @@ urlpatterns = [
     path('accounts/',include('accounts.urls')),
     path('freehome/',include('freebd.urls')),
     path('profile/',include('users.urls')),
+    path('chat/',include('chat.urls')),
+    path('AI/',include('AIchat.urls')),    
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
