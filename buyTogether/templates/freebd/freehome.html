@@ -8,7 +8,7 @@
 {% for post in posts %}
 <div col="col-12">
         <div class="card" style="margin-top: 20px;">
-            <img src="{%static 'images/gray.jpg' %}" class="card-img-top" alt="...">
+            <img src="{%static 'images/gray.jpg' %}" class="card-img-top">
             <div class="card-body">
                
               <h4 class="card-title purbd_home_title"><a href="{% url 'detail' post.id %}" class="stretched-link" style=" text-decoration : none; color : black;">{{post.title}}</a></h4>

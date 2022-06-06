@@ -16,6 +16,18 @@
             <button type='submit' class='sch_smit'>검색</button>
         </div>
       </div>
+      <div class = "row">
+        <div class = "col-12">
+              <div class="btn-group purbd_home_div_category">
+                <a href="/purhome" class="btn btn-primary active" aria-current="page">전체</a>
+                <a href="{% url 'category' 'necessity' %}" class="btn btn-primary">생필품</a>
+                <a href="{% url 'category' 'ott' %}" class="btn btn-primary">OTT</a>
+                <a href="{% url 'category' 'delivery' %}" class="btn btn-primary">배달</a>
+                <a href="{% url 'category' 'food' %}" class="btn btn-primary">식료품</a>
+              </div>
+      </div>
+      </div>
+
       <div class="row">
         {% for post in posts %}
         <div class="col-sm-6 col-md-4 p-2 position-relative">
@@ -48,7 +60,7 @@
 
         <div class="row justify-content-end ">
             <div class="col-sm-6 col-md-4 p-2 purbd_home_div">
-                <button type="button" onClick="location.href='create'">새글작성</button>
+                <button type="button" onClick="location.href='create'" class='new_post_button'>새글작성</button>
             </div>
         </div>
 
