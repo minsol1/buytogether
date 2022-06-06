@@ -20,3 +20,8 @@ class CommentForm(forms.ModelForm):
 		model = Comment
 		fields = ['body']
 
+		widgets = {
+			'body' : forms.TextInput(
+				attrs={'style': 'width: 830px; height: 30px; border: 1px solid; border-color: lightgrey;border-radius: 7px 7px;', 'placeholder': '여기에 입력하세요'}
+			),
+		}
