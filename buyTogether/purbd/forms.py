@@ -13,6 +13,12 @@ class Purmodelform(forms.ModelForm):
 			'body' : forms.TextInput(
 				attrs={'class': 'form-control', 'style': 'width: 400px', 'placeholder': '내용을 입력하세요.'}
 			),
+			'date' : forms.TextInput(
+				attrs={'class': 'form-control', 'style': 'width: 400px', 'placeholder': '날짜를 입력하세요.'}
+			),
+			'price' : forms.TextInput(
+				attrs={'class': 'form-control', 'style': 'width: 400px', 'placeholder': '가격을 입력하세요.'}
+			),
 			'wpeople' : forms.TextInput(
 				attrs={'class': 'form-control', 'style': 'width: 400px', 'placeholder': '모집인원을 입력하세요.'}
 			),
