@@ -48,10 +48,10 @@
                         <a class="nav-link nav_change_color fw-bold" href="/freehome">자유게시판</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav_change_color fw-bold" href="">채팅(아직X)</a>
+                        <a class="nav-link nav_change_color fw-bold" href="{% url 'chathome' %}">채팅 </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav_change_color fw-bold" href="">AI챗봇(아직X)</a>
+                        <a class="nav-link nav_change_color fw-bold" href="{% url 'AIhome' %}">AI챗봇</a>
                     </li>
                     <li class="nav-item">
                     {% if user.is_authenticated %}

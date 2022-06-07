@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'freebd',
     'purbd',
     'users',
+    'chat',
+    'AIchat',
 ]
 
 MIDDLEWARE = [

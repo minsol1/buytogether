@@ -46,12 +46,10 @@
     width: 310px;
     padding: 5px;
 }
-
 .purbd_detail_table_line {
     border-right: 1px solid lightgrey;
     border-left: 1px solid lightgrey;
 }
-
 
 /* ---------join---------- */
 .join_tag {
@@ -65,6 +63,7 @@
     height: 50px;
     
     margin: 0 265px 20px 265px;
+
 }   
 
 
@@ -377,14 +376,15 @@
   width: 35rem; 
   height: 30rem;
   margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 #fix {
   position: fixed;
-  bottom: 0;
-  width: 100%;
+  right: 40px;
+  bottom: 50px;
+
 }
 
 .post_button {
@@ -400,6 +400,12 @@
 
 .post_button:hover {
 	background: #f09fb0;
+}
+.space{
+  margin-right: 10px;
+
+
+
 }
 
 
