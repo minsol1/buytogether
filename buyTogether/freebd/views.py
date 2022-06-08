@@ -4,7 +4,7 @@ from .models import Free
 
 # Create your views here.
 def freehome(request):
-    posts= Free.objects.all()
+    posts= Free.objects.all().order_by('-id')
 
     return render(request,'freebd/freehome.html',{'posts':posts})
 

@@ -1,3 +1,53 @@
+<head>
+  <script>
+      const href = window.location.href;//현재 창의 주소 받아옴
+
+      const arr = href.split('/');// /로 나눔
+      var category = arr[arr.length-1];
+
+      window.onload = function(){
+        var cat = [document.getElementById('all'), document.getElementById('necessity'), document.getElementById('ott'), document.getElementById('delivery'), document.getElementById('food')]; 
+  
+        if (category == 'necessity'){
+          for(var i = 0 ; i< cat.length ; i++){
+            if(i == 1){cat[i].classList.add('catBtn-active');}
+            else{
+              cat[i].classList.remove('catBtn-active');
+              cat[i].classList.add('catBtn');
+            }
+            }
+          }
+        
+        else if (category == 'ott'){
+          for(var i = 0 ; i< cat.length ; i++){
+            if(i == 2){cat[i].classList.add('catBtn-active');}
+            else{
+              cat[i].classList.remove('catBtn-active');
+              cat[i].classList.add('catBtn');
+            }
+            }
+        }
+        else if (category == 'delivery'){
+          for(var i = 0 ; i< cat.length ; i++){
+            if(i == 3){cat[i].classList.add('catBtn-active');}
+            else{
+              cat[i].classList.remove('catBtn-active');
+              cat[i].classList.add('catBtn');
+            }
+            }
+        }
+        else{
+          for(var i = 0 ; i< cat.length ; i++){
+            if(i == 4){cat[i].classList.add('catBtn-active');}
+            else{
+              cat[i].classList.remove('catBtn-active');
+              cat[i].classList.add('catBtn');
+            }
+            }
+        }
+      }
+  </script>
+</head>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 {% extends 'nav.html' %}
@@ -16,22 +66,20 @@
             <button type='submit' class='sch_smit'>검색</button>
         </div>
       </div>
-      
-      <div class = "row">
+      <div class = "row purbd_home_div_category ">
         <div class = "col-12">
-              <div class="btn-group purbd_home_div_category">
-                <a href="/purhome" class="btn btn-primary active" aria-current="page">전체</a>
-                <a href="{% url 'category' 'necessity' %}" class="btn btn-primary">생필품</a>
-                <a href="{% url 'category' 'ott' %}" class="btn btn-primary">OTT</a>
-                <a href="{% url 'category' 'delivery' %}" class="btn btn-primary">배달</a>
-                <a href="{% url 'category' 'food' %}" class="btn btn-primary">식료품</a>
+              <div class="btn-group btn-group-lg">
+                <a href="/purhome" class="btn  catBtn-active" aria-current="page" id="all">전체</a>
+                <a href="{% url 'category' 'necessity' %}" class="btn catBtn" id="necessity">생필품</a>
+                <a href="{% url 'category' 'ott' %}" class="btn catBtn" id="ott">OTT</a>
+                <a href="{% url 'category' 'delivery' %}" class="btn catBtn" id="delivery">배달</a>
+                <a href="{% url 'category' 'food' %}" class="btn catBtn" id="food">식료품</a>
               </div>
       </div>
       </div>
- 
 
-      </div>
       <div class="row">
+       
         {% for post in posts %}
         <div class="col-sm-6 col-md-4 p-2 position-relative">
             <div class="card" style="margin-top: 10px;">
@@ -63,7 +111,7 @@
 
         <div class="row justify-content-end ">
             <div class="col-sm-6 col-md-4 p-2 purbd_home_div">
-                <button type="button" onClick="location.href='create'">새글작성</button>
+                <button type="button" onClick="location.href='create'" class='new_post_button'>새글작성</button>
             </div>
         </div>
 
