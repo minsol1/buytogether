@@ -45,7 +45,9 @@
                 </td>
                 <td class="purbd_detail_td">
                     <div style="font-size: 40px; margin-top: -15px;">{{detail.people}}/{{detail.wpeople}}</div>
-                    <input type="button"href="{% url 'auth' %}" value="참여하기">
+                    <button>
+                        <a href="{% url 'auth' %}" style="text-decoration: none; color:black;">참가하기</a>
+                    </button>
                 </td>
             {% comment %} </tr>
             <tr>
