@@ -440,18 +440,77 @@
 }
 
 .purbd_home_div_category{
-  height: 70px;
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
-  vertical-align: middle;
-  margin: 0 auto; 
 }
+.catBtn{
+  background: #E98197;
+  border-color: white;
+  color : white;
+}
+
+.catBtn:hover{
+  background: #f3bcc8;
+  border-color: white;
+  color : white;
+}
+
+.catBtn-active{
+  background: #c23352;
+  color: white;
+  border-color: white;
+  
+}
+
+.catBtn-active:hover{
+  background: #c698a2;
+  color: white;
+  border-color: white;
+  
+}
+
 
 
 /* ---------freebd-home---------- */
 .freebd-home-div{
   margin-top:200px;
+}
+
+.freebd-home-board{
+  width: 35rem; 
+  height: 30rem;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#fix {
+  position: fixed;
+  right: 40px;
+  bottom: 50px;
+
+}
+
+.post_button {
+	width: 50px; height: 50px;
+	margin: 0; border: 0;
+	vertical-align: top;
+	background: #E98197;
+	color: white;
+	font-weight: bold;
+	border-radius: 25px;
+	cursor: pointer;
+}
+
+.post_button:hover {
+	background: #f09fb0;
+}
+.space{
+  margin-right: 10px;
+
+
+
 }
 
 
