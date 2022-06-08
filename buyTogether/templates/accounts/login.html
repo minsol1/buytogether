@@ -25,12 +25,13 @@
           <div class="login">
             <h1>로그인</h1>
             <!-- Loging form -->
-                  <form>
+                  <form method="POST" role="form" action="{% url 'login' %}">
+                    {% csrf_token %}
                     <div class="form-group">
-                      <input type="email" class="form-control login_input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">            
+                      <input type="text" name ="userID"class="form-control login_input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">            
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control login_input" id="exampleInputPassword1" placeholder="Password">
+                      <input type="password" name="password" class="form-control login_input" id="exampleInputPassword1" placeholder="Password">
                     </div>
                     <div class="form-check">
                       <label class="switch">
@@ -42,6 +43,7 @@
                     <br>
                     <button type="submit" class="btn btn-lg btn-block btn-success">로그인</button>
                   </form>
+                  <a href="{% url 'signup' %}">회원가입</a>
              <!-- End Loging form -->
           </div>
         </div>
@@ -49,4 +51,3 @@
     </div>
   </body>
 </html>
-<a href="{% url 'signup' %}">회원가입</a>
