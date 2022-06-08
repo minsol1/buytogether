@@ -34,3 +34,7 @@ def create(request):
     else:
         form  = Purmodelform()
     return render(request,'purbd/create.html', {'form':form})
+
+
+def auth(request):
+    return render(request,'purbd/auth.html')
