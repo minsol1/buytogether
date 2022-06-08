@@ -10,41 +10,43 @@
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <title>로그인</title>
   </head>
-  <body class="login_body">
-    <!-- Backgrounds -->
-    <div id="login-bg" class="container-fluid">
-      <div class="bg-color"></div>
-    </div>
-
-    <!-- End Backgrounds -->
-    <div class="container" id="login">
-        <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="login">
-            <h1>로그인</h1>
-            <!-- Loging form -->
-                  <form>
-                    <div class="login_form-group">
-                      <input type="email" class="form-control login_input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">            
-                    </div>
-                    <div class="login_form-group">
-                      <input type="password" class="login_form-control login_input" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="login_form-check">
-                      <label class="switch">
-                      <input type="checkbox" class="login_input">
-                      <span class="slider round"></span></label>
-                      <label class="login_form-check-label" for="exampleCheck1">정보 기억하기</label>   
-                      <label class="forgot-password"><a href="#">비밀번호 찾기<a></label>
-                    </div>
-                    <br>
-                    <button type="submit" class="btn btn-lg btn-block btn-success">로그인</button>
-                  </form>
-                  <a href="{% url 'signup' %}">회원가입</a>
-             <!-- End Loging form -->
-          </div>
+  <body>
+    <div class="registration-form">
+        <form method="post" action="{% url 'signup' %}">
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+            {% csrf_token %}
+            <div class="form-group">
+            {{form.userID}}
+            </div>
+            <div class="form-group">
+            {{form.password}}
+            </div>
+            <div class="form-group">
+                <input type="password" name="password2" class="form-control item" id="password" placeholder="비밀번호 확인">
+            </div>
+            <div class="form-group">
+            {{form.nickname}}
+            </div>
+            <div class="form-group">
+                <button type="submit" value="회원가입" class="btn btn-block create-account">계정 만들기</button>
+            </div>
+            <div class="signup">
+                이미 회원인가요? <a href="{% url 'login' %}">로그인</a>
+            </div>
+        </form>
+        <div class="social-media">
+            <h5>소셜 로그인 하기</h5>
+            <div class="social-icons">
+                <a href="#"><i class="icon-social-facebook" title="Facebook"></i></a>
+                <a href="#"><i class="icon-social-google" title="Google"></i></a>
+                <a href="#"><i class="icon-social-twitter" title="Twitter"></i></a>
+            </div>
         </div>
-        </div>
     </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
