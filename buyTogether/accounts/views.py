@@ -1,41 +1,47 @@
 from django.shortcuts import redirect, render
 from django.contrib import auth
 from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate,logout
 from .forms import Userform
 from .models import User
+
 # Create your views here.
 
-def login(request):
-    if request.method == 'POST':
-        username = request.POST['username']
+def login_views(request):
+    if request.method =='POST': #데이터베이스와 관련된 요청이면
+        userID = request.POST['userID']
         password = request.POST['password']
-        user = auth.authenticate(request, username=username, password=password)
-        if user is not None:
-            auth.login(request, user)
+        user = auth.authenticate(request, userID=userID, password=password)
+		#요청한 user와 데이터베이스의 user가 같은지 확인(인증)
+        if user is not None: #user가 맞으면
+            login(request, user)#login
             return redirect('home')
         else:
-            return render(request, 'accounts/login.html')
+            return render(request, 'accounts/bad_login.html')
     else:
         return render(request, 'accounts/login.html')
 
-def logout(request):
+def logout_views(request):
     auth.logout(request)
     return redirect('home')
 
 def signup(request):
     if request.method == 'POST':
         form = Userform(request.POST)
-
-        if request.POST['password'] == request.POST['password2']:
-            user = User.objects.create_user(
-                userID = request.POST['userID'],
-                username = request.POST['nickname'],
-                password = request.POST['password'],
-            )
-            auth.login(request, user)
-            return redirect('home')
-        return render(request, 'accounts/signup.html')
+        if form.is_valid():
+            if request.POST['password'] == request.POST['password2']:
+                user = form.save()
+                login(request, user)
+        return redirect('home')
+        
+            # user = User.objects.create_user(
+            #     userID = request.POST['userID'],
+            #     nickname = request.POST['nickname'],
+            #     password = request.POST['password'],
+            #     email = request.POST['email'],
+            # )
+            # auth.login(request, user)
+        #return render(request, 'accounts/signup.html',{'form':form})
     else:
         form = Userform()
     return render(request, 'accounts/signup.html',{'form':form})
