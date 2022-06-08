@@ -181,7 +181,7 @@
 
 .registration-form .form-icon{
 	text-align: center;
-    background-color: #5891ff;
+    background-color: #E98197;
     border-radius: 50%;
     font-size: 40px;
     color: white;
@@ -203,7 +203,7 @@
     padding: 10px 20px;
     font-size: 18px;
     font-weight: bold;
-    background-color: #5791ff;
+    background-color: #E98197;
     border: none;
     color: white;
     margin-top: 20px;
@@ -260,163 +260,98 @@
 }
 
 /* ---------login---------- */
-.login_body {
-	font-family: 'Gowun Dodum', sans-serif;
+.login-form{
+	padding: 50px 0;
 }
 
-#login-bg.container-fluid {
-	padding: 0;
-	height: 100%;
-	position: absolute;
+.login-form form{
+    background-color: #fff;
+    max-width: 600px;
+    margin: auto;
+    padding: 50px 70px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
 }
 
-/* Background image an color divs*/
-
-.bg-img , .bg-color {
-	min-width: 50%;
-	vertical-align: top;
-	padding: 0;
-	margin-left: 0;
-	height: 100%;
-	background-color: #CAF0D3;
-	display: inline-block;
-	overflow: hidden;
-}
-
-.bg-color {
-	margin-left: -5px;
-}
-
-#login{
-	padding-top: 10%;
+.login-form .form-icon{
 	text-align: center;
-	text-transform: uppercase;
+    background-color: #E98197;
+    border-radius: 50%;
+    font-size: 40px;
+    color: white;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-bottom: 50px;
+    line-height: 100px;
 }
 
-.login {
-	width: 100%;
-	height: 500px;
-	background-color: #fff;
-	padding: 15px;
-	padding-top: 30px;
+.login-form .item{
+	border-radius: 20px;
+    margin-bottom: 25px;
+    padding: 10px 20px;
 }
 
-.login h1 {
-	margin-top: 30px;
-	font-weight: bold;
-	font-size: 60px;
-	letter-spacing: 3px;
+.login-form .create-account{
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #E98197;
+    border: none;
+    color: white;
+    margin-top: 20px;
 }
 
-.login form {
-	max-width: 420px;
-	margin: 30px auto;
+.login-form .social-media{
+    max-width: 600px;
+    background-color: #fff;
+    margin: auto;
+    padding: 35px 0;
+    text-align: center;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color: #9fadca;
+    border-top: 1px solid #dee9ff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
 }
 
-.login .btn {
-	border-radius: 50px;
-	text-transform: uppercase;
-	font-weight: bold;
-	letter-spacing: 2px;
-	font-size: 20px;
-	padding: 14px;
-	background-color: #00B72E;
+.login-form .social-icons{
+    margin-top: 30px;
+    margin-bottom: 16px;
 }
 
-.login_form-group input {
-	font-size: 20px;
-	font-weight: lighter;
-	border: none;
-	background-color: #F0F0F0;
-	color: #465347!important;
-	padding: 26px 30px;
-	border-radius: 50px;
-	transition : 0.2s;
+.login-form .social-icons a{
+    font-size: 23px;
+    margin: 0 3px;
+    color: #5691ff;
+    border: 1px solid;
+    border-radius: 50%;
+    width: 45px;
+    display: inline-block;
+    height: 45px;
+    text-align: center;
+    background-color: #fff;
+    line-height: 45px;
 }
 
-/* Form check styles*/
-
-.login_form-check {
-	padding: 0;
-	text-align: left;
+.login-form .social-icons a:hover{
+    text-decoration: none;
+    opacity: 0.6;
 }
 
-.login_form-check label {
-	vertical-align: top;
-	padding-top: 5px;
-	padding-left: 5px;
-	font-size: 15px;
-	color: #606060;
-	font-size: 14px;
-}
+@media (max-width: 576px) {
+    .login-form form{
+        padding: 50px 20px;
+    }
 
-.forgot-password {
-	text-align: right;
-	float: right;
-	font-weight: bold;
-}
-
-.forgot-password a {
-	color: #00B72E;
-	opacity: 0.6;
-}
-
-.forgot-password a:hover {
-	opacity: 1;
-}
-
-
-/* Switch styles */
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 30px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {display:none;}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #F0F0F0;
-  -webkit-transition: .4s;
-  transition: .4s;
-  border-radius: 30px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 22px;
-  width: 22px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-  border-radius: 50%;
-}
-
-.login_input:checked + .slider {
-  background-color: #00B72E;
-}
-
-.login_input:focus + .slider {
-  box-shadow: 0 0 1px #00B72E;
-}
-
-.login_input:checked + .slider:before {
-  -webkit-transform: translateX(30px);
-  -ms-transform: translateX(30px);
-  transform: translateX(30px);
+    .login-form .form-icon{
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+        line-height: 70px;
+    }
 }
 
 /* ---------purbd-home---------- */
@@ -502,6 +437,7 @@
 	border-radius: 10px;
 	cursor: pointer;
 }
+
 .new_post_button:hover {
 	background: #f09fb0;
 }
@@ -554,9 +490,26 @@
 
 #fix {
   position: fixed;
-  right: 40px;
+  right: 1px;
   bottom: 50px;
+}
 
+#fix_2 {
+  position: fixed;
+  right: 1px;
+  bottom: 50px;
+}
+
+#fix_11 {
+  position: fixed;
+  right: 70px;
+  bottom: 50px;
+}
+
+#fix_22 {
+  position: fixed;
+  right: 70px;
+  bottom: 50px;
 }
 
 .post_button {
@@ -575,9 +528,6 @@
 }
 .space{
   margin-right: 10px;
-
-
-
 }
 
 
