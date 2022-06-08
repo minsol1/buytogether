@@ -1,37 +1,40 @@
 {% extends 'nav.html' %}
 
 {% block content %}
-<div class="container">
-    <table style="width: 930px; border-bottom: 1px solid lightgrey;">
-        <tr>
-            <td style="width: 30px; padding: 0 0 15px 2px;"><img class="detail_lev"></td>
-            <td style="font-size: 20px; text-align: left; padding-left: 10px; padding-bottom: 15px;">닉네임 레벨</td>
-        </tr>
-    </table>
+<div class="detail_container">
+    <div class="detail_division">
+        <table style="width: 858px;">
+                <tr>
+                    <td style="width: 30px; padding-left: 2px;"><img class="detail_lev"></td>
+                    <td style="font-size: 25px; text-align: left; padding-left: 10px;">닉네임 레벨</td>
+                </tr>
+        </table>
+    </div>
     
-    <div style="font-size: 13px; text-align: right;">작성일 : {{detail.writeDate}}</div>
-
-    <h3 class="detail_title">{{detail.title}}</h3>
-
     {% if detail.photo %}
     <img src="{{ detail.photo.url }}" alt="" class="detail_img">
-    {% endif %}
+    {% endif %} 
 
-    <p style="word-wrap: break-word; font-size: 20px; margin: 20px 0;">{{detail.body}}</p>
+    <div class="detail_division">
+        <div style="font-size: 13px; text-align: right; margin-top: -3px;">작성일 : {{detail.writeDate}}</div>
 
-    <hr style="width: 930px; margin: 20px 0;">
+        <h3 class="detail_title">{{detail.title}}</h3>
 
-    <form method="POST" action="{% url 'create_comment' detail.id %}">
-        {% csrf_token %}
-        {{comment_form.body}}
-        <input type="submit" value="등록" style="width: 75px; margin-left: 10px;">
-    </form>
+        <p style="word-wrap: break-word; font-size: 20px; margin: 20px 0 0 0;">{{detail.body}}</p>
+    </div>
 
-    {% for comment in detail.comment_set.all %}
-        <hr style="width: 930px; margin: 20px 0;">
-        <span>닉네임</span> <span>{{comment.writeDate}}</span>
-        <p>{{ comment.body }}</p>
-    {% endfor %}
-    <hr style="width: 930px; margin: 20px 0;">
+    <div class="detail_division">
+        <form method="POST" action="{% url 'create_comment' detail.id %}">
+            {% csrf_token %}
+            {{comment_form.body}}
+            <input type="submit" value="등록" class="new_post_button" style="width: 91px; margin-left: 16px;">
+        </form>
+
+        {% for comment in detail.comment_set.all %}
+        {% comment %} <hr style="width: 858px; margin: 20px 0;"> {% endcomment %}
+        <div style="margin-top: 15px;">닉네임 {{comment.writeDate}}</div>
+        <p style="margin: 0;">{{ comment.body }}</p>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
