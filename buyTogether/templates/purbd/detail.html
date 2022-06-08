@@ -1,53 +1,58 @@
 {% extends 'nav.html' %}
 
 {% block content %}
-<div class="detail_container">
+<div class="container">
     {% comment %} {% if detail.photo %}
         <img src="{{ detail.photo.url }}" alt="" id="purbd_detail_img">
     {% endif %} {% endcomment %}
+    <div class="division">
+        <table style="width: 858px;">
+                <tr>
+                    <td style="width: 30px; padding-left: 2px;"><img class="detail_lev"></td>
+                    <td style="font-size: 20px; text-align: left; padding-left: 10px;">닉네임 레벨</td>
+                    <td style="text-align: right;"><input type="button" value="좋아요 {{detail.good}}"></td>
+                </tr>
+        </table>
+    </div>
 
-    <table style="width: 930px; border-bottom: 1px solid lightgrey;">
-            <tr>
-                <td style="width: 30px; padding: 0 0 15px 2px;"><img class="detail_lev"></td>
-                <td style="font-size: 20px; text-align: left; padding-left: 10px; padding-bottom: 15px;">닉네임 레벨</td>
-                <td style="text-align: right; padding: 0 2px 15px 0;"><input type="button" value="좋아요 {{detail.good}}"></td>
-            </tr>
-    </table>
-
-    <div style="font-size: 13px; text-align: right;">작성일 : {{detail.writeDate}}</div>
     {% comment %} <hr style="height: 1px; border: none; background-color: grey; margin: 15px 0;"> {% endcomment %}
 
-    <h3 class="detail_title">{{detail.title}}</h3>
-
-    <h2 id="purbd_detail_price">{{detail.price}}원</h2>
-    
     {% if detail.photo %}
     <img src="{{ detail.photo.url }}" alt="" class="detail_img">
     {% endif %}
 
-    <p style="word-wrap: break-word; font-size: 20px; margin: 20px 0 50px 0;">{{detail.body}}</p>
+    <div class="division">
+        <div style="font-size: 13px; text-align: right; margin-top: -3px;">작성일 : {{detail.writeDate}}</div>
 
+        <h3 class="detail_title">{{detail.title}}</h3>
+
+        <h2 id="purbd_detail_price">{{detail.price}}원</h2>
+        
+        <p style="word-wrap: break-word; font-size: 20px; margin: 20px 0 0 0;">{{detail.body}}</p>
+    </div>
     <!-- <hr style="height: 0.5px; border: none; background-color: lightgrey; margin-bottom: 20px; margin: 13px 0;"> -->
 
-    <table style="width: 930px; text-align: center; border-collapse: collapse; margin-top: 10px;">
-        <tr>
-            <td class="purbd_detail_td">
-                <div style="padding-top: 5px;">거래 장소</div>
-                <div style="margin-top: 10px; font-size: 30px;">거래 장소</div>
-            </td>
-            <td class="purbd_detail_td, purbd_detail_table_line">
-                <div style="padding-top: 5px;">남은 시간</div>
-                <div style="margin-top: 10px; font-size: 30px;">00:00:00</div>
-            </td>
-            <td class="purbd_detail_td">
-                <div style="font-size: 40px; margin-top: -20px;">{{detail.people}}/{{detail.wpeople}}</div>
-                <input type="button" value="참여하기">
-            </td>
-        {% comment %} </tr>
-        <tr>
-            <td class="purbd_detail_td" style="font-size: 30px;">위치</td>
-            <td class="purbd_detail_td, purbd_detail_table_line">00:00:00</td>
-        </tr> {% endcomment %}
-    </table>
+    <div class="division">
+        <table class="division_table">
+            <tr>
+                <td class="purbd_detail_td">
+                    <div style="padding-top: 5px;">거래 장소</div>
+                    <div style="margin-top: 10px; font-size: 30px;">거래 장소</div>
+                </td>
+                <td class="purbd_detail_td, purbd_detail_table_line">
+                    <div style="padding-top: 5px;">남은 시간</div>
+                    <div style="margin-top: 10px; font-size: 30px;">00:00:00</div>
+                </td>
+                <td class="purbd_detail_td">
+                    <div style="font-size: 40px; margin-top: -15px;">{{detail.people}}/{{detail.wpeople}}</div>
+                    <input type="button" value="참여하기">
+                </td>
+            {% comment %} </tr>
+            <tr>
+                <td class="purbd_detail_td" style="font-size: 30px;">위치</td>
+                <td class="purbd_detail_td, purbd_detail_table_line">00:00:00</td>
+            </tr> {% endcomment %}
+        </table>
+    </div>
 </div>
 {% endblock %}

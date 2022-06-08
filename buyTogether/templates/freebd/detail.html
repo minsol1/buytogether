@@ -1,7 +1,7 @@
 {% extends 'nav.html' %}
 
 {% block content %}
-<div class="detail_container">
+<div class="container">
     <table style="width: 930px; border-bottom: 1px solid lightgrey;">
         <tr>
             <td style="width: 30px; padding: 0 0 15px 2px;"><img class="detail_lev"></td>
@@ -24,7 +24,7 @@
     <form method="POST" action="{% url 'create_comment' detail.id %}">
         {% csrf_token %}
         {{comment_form.body}}
-        <input type="submit" style="width: 75px; margin-left: 10px;">
+        <input type="submit" value="등록" style="width: 75px; margin-left: 10px;">
     </form>
 
     {% for comment in detail.comment_set.all %}
