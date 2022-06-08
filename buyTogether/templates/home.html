@@ -1,54 +1,56 @@
 {% extends 'nav.html' %}
+{% load static %}
 {% block content %}
+<div class="container">
+  <div class="home_video_background">
+    <video class="home_video_detail" src="{%static 'videos/바이투게더.mp4' %}" autoplay loop muted></video>
+  <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/UyrG8jM4T6k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+  </div>
+</div>
 
-홈화면
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/UyrG8jM4T6k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<!-- <video src="/buy_together/buyTogether/video/바이투게더.mp4" type="video/mp4" width="100%" height="300px" autoplay muted controls> 
-</video> -->
-
-<section id="gallery">
+<section id="gallery" class="home_card_margin">
   <div class="container">
     <div class="row">
       <div class="col-lg-4 mb-4">
         <div class="card">
-          <img src="C:\Users\User\Desktop\생필품.jpg" alt="이미지 안나옴" class="card-img-top">
+          <img src="{%static 'images/생필품.jpg' %}" alt="이미지 안나옴" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">생필품</h5>
             <p class="card-text">필요한 생필품을 사보세요</p>
-          <a href="" class="btn btn-outline-success btn-sm">생필품 게시판으로 이동</a>
+          <a href="{% url 'category' 'necessity' %}" class="btn btn-outline-success btn-sm">생필품 게시판으로 이동</a>
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 mb-4">
         <div class="card">
-          <img src="C:\Users\User\Desktop\식재료.jpg" alt="이미지 안나옴" class="card-img-top">
+          <img src="{%static 'images/식재료.png' %}" alt="이미지 안나옴" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">식재료</h5>
             <p class="card-text">필요한 식재료를 사보세요</p>
-            <a href="" class="btn btn-outline-success btn-sm">식재료 게시판으로 이동</a>
+            <a href="{% url 'category' 'food' %}" class="btn btn-outline-success btn-sm">식재료 게시판으로 이동</a>
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 mb-4">
         <div class="card">
-        <img src="C:\Users\User\Desktop\OTT.jpg" alt="이미지 안나옴" class="card-img-top">
+        <img src="{%static 'images/OTT.jpg' %}" alt="이미지 안나옴" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">OTT</h5>
           <p class="card-text">OTT를 공유해보세요</p>
-          <a href="" class="btn btn-outline-success btn-sm">OTT 게시판으로 이동</a>
+          <a href="{% url 'category' 'ott' %}" class="btn btn-outline-success btn-sm">OTT 게시판으로 이동</a>
         </div>
         </div>
       </div>
 
       <div class="col-lg-4 mb-4">
         <div class="card">
-        <img src="C:\Users\User\Desktop\배달.jpg" alt="이미지 안나옴" class="card-img-top">
+        <img src="{%static 'images/배달.jpeg' %}" alt="이미지 안나옴" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">배달</h5>
           <p class="card-text">배달비를 공유해보세요</p>
-          <a href="" class="btn btn-outline-success btn-sm">배달 게시판으로 이동</a>
+          <a href="{% url 'category' 'delivery' %}" class="btn btn-outline-success btn-sm">배달 게시판으로 이동</a>
         </div>
         </div>
       </div>
@@ -56,5 +58,4 @@
   </div>
 </div>
 </section>
-
 {% endblock %}
