@@ -1,16 +1,16 @@
 {% extends 'nav.html' %}
 
 {% block content %}
-<div class="container">
+<div class="detail_container">
     {% comment %} {% if detail.photo %}
         <img src="{{ detail.photo.url }}" alt="" id="purbd_detail_img">
     {% endif %} {% endcomment %}
-    <div class="division">
+    <div class="detail_division">
         <table style="width: 858px;">
                 <tr>
-                    <td style="width: 30px; padding-left: 2px;"><img class="detail_lev"></td>
-                    <td style="font-size: 20px; text-align: left; padding-left: 10px;">닉네임 레벨</td>
-                    <td style="text-align: right;"><input type="button" value="좋아요 {{detail.good}}"></td>
+                    <td style="width: 40px; padding-left: 2px;"><img class="detail_lev"></td>
+                    <td style="font-size: 25px; text-align: left; padding-left: 10px;">닉네임 레벨</td>
+                    <td style="text-align: right;"><input type="button" value="좋아요 {{detail.good}}" class="new_post_button"></td>
                 </tr>
         </table>
     </div>
@@ -19,9 +19,9 @@
 
     {% if detail.photo %}
     <img src="{{ detail.photo.url }}" alt="" class="detail_img">
-    {% endif %}
+    {% endif %} 
 
-    <div class="division">
+    <div class="detail_division">
         <div style="font-size: 13px; text-align: right; margin-top: -3px;">작성일 : {{detail.writeDate}}</div>
 
         <h3 class="detail_title">{{detail.title}}</h3>
@@ -32,22 +32,24 @@
     </div>
     <!-- <hr style="height: 0.5px; border: none; background-color: lightgrey; margin-bottom: 20px; margin: 13px 0;"> -->
 
-    <div class="division">
+    <div class="detail_division">
         <table class="division_table">
             <tr>
-                <td class="purbd_detail_td">
+                <td class="detail_td">
                     <div style="padding-top: 5px;">거래 장소</div>
                     <div style="margin-top: 10px; font-size: 30px;">거래 장소</div>
                 </td>
-                <td class="purbd_detail_td, purbd_detail_table_line">
+                <td class="detail_td, detail_table_line">
                     <div style="padding-top: 5px;">남은 시간</div>
                     <div style="margin-top: 10px; font-size: 30px;">00:00:00</div>
                 </td>
-                <td class="purbd_detail_td">
+                <td class="detail_td">
                     <div style="font-size: 40px; margin-top: -15px;">{{detail.people}}/{{detail.wpeople}}</div>
+
                     <button>
                         <a href="{% url 'auth' %}" style="text-decoration: none; color:black;">참가하기</a>
                     </button>
+
                 </td>
             {% comment %} </tr>
             <tr>

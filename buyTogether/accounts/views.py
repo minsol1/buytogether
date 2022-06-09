@@ -19,7 +19,8 @@ def login_views(request):
         else:
             return render(request, 'accounts/bad_login.html')
     else:
-        return render(request, 'accounts/login.html')
+        form = Userform()
+        return render(request, 'accounts/login.html',{'form':form})
 
 def logout_views(request):
     auth.logout(request)
