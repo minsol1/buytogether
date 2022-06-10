@@ -26,7 +26,7 @@
                 </td>
                 <td class="purbd_detail_td">
                     <div style="padding-top: 5px;">휴대폰 인증 여부</div>
-                    
+
                     <div style="margin-top: 10px; font-size: 30px;">미인증</div>
                 </td>
         </table>        
@@ -36,6 +36,10 @@
         <div class="half_division" style="margin-right: 30px;">
             <div class="half_division_info">작성한 거래 글</div>
             <hr style="margin: 0;">
+            {% for post in p_post %}
+                <a href="{% url 'detail' post.id %}" >{{post.title}}</a> 
+            {% endfor %}
+
         </div>
 
         <div class="half_division">
