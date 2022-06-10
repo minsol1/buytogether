@@ -45,7 +45,11 @@
                 </td>
                 <td class="detail_td">
                     <div style="font-size: 40px; margin-top: -15px;">{{detail.people}}/{{detail.wpeople}}</div>
-                    <input type="button" value="참여하기" class="new_post_button">
+
+                    <button>
+                        <a href="{% url 'auth' %}" style="text-decoration: none; color:black;">참가하기</a>
+                    </button>
+
                 </td>
             {% comment %} </tr>
             <tr>

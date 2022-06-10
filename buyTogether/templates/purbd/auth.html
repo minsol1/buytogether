@@ -1,0 +1,58 @@
+<head>
+    {% extends 'nav.html' %}
+    {% load static %}
+    
+    <!-- Bootstrap CSS -->
+    {% block css %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% endblock css %}
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{% block content %}
+<div class="container">
+<div class="row">
+    <div class = "col-12">
+        <h3 style="text-align: center;">참가자 목록</h3>
+    </div>
+</div>
+<div class="row" style="margin-top: 20px;">
+    <table class="app_table">
+        <thead>
+            <tr style="height: 30px;">
+                <th class="auth_th">순번</th>
+                <th class="auth_th">닉네임</th>
+                <th class="auth_th">거래완료율</th>
+                <th class="auth_th">체크</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr style="height: 30px;" class="auth_tbody_tr">
+            <td class="auth_td">1</td>
+            <td class="auth_td">미니</td>
+            <td class="auth_td">50%</td>
+            <td class="auth_td"><input type="checkbox" name="choose1"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<p></p>
+    
+
+
+
+
+
+
+
+
+</div>
+<div class="authBtn_section">
+    <div>
+        <button class="rejectBtn">거절</button>
+        <button class="appBtn">승인</button>
+    </div>   
+</div>
+{% endblock %}
