@@ -17,7 +17,7 @@
         
       <div class="row justify-content-end" id="fix">
         <div class="col-sm-6 col-md-4 p-2 purbd_home_div">
-            <button type="button" onClick="location.href='create'" class='post_button'>+</button>
+            <button type="button" onClick="location.href='freeCreate'" class='post_button'>+</button>
         </div>
       </div>
 
@@ -32,7 +32,7 @@
            
             <div class="card-body">
                
-              <h4 class="card-title purbd_home_title"><a href="{% url 'freeDetail' post.id %}" class="stretched-link" style=" text-decoration : none; color : black;">{{post.title}}</a></h4>
+              <h4 class="card-title purbd_home_title">{{post.body}}</h4>
               <h5 class="card-subtitle mb-2 " style="text-align:left; margin-top: 10px; ">닉네임</h5>
 <!--              
               <h5 class="card-subtitle mb-2 " style="text-align:left; margin-top: 10px; ">{{post.body}}</h5> -->

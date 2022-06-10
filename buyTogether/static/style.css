@@ -14,6 +14,7 @@
 
   video { width: 100%; }
 
+
 /* ---------detail---------- */
 .detail_container {
     width: 900px;
@@ -93,6 +94,7 @@
 	background: #f09fb0;
 }
 
+
 /* ---------chat---------- */
 .chat_img {
     width: 60px;
@@ -170,6 +172,34 @@
 }
 
 /* ---------create---------- */
+.crt_post_button{
+  background-color: #E98197;
+  color:white;
+  width: 75px;
+}
+
+.crt_post_button:hover{
+  background-color: #f09fb0;
+  color:white;
+}
+
+.crt_div{
+  border:1px solid lightgray;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+
+}
+
+.crt_div_2{
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+
+}
+
 
 /* ---------registeration---------- */
 
@@ -498,7 +528,7 @@
 
 #fix {
   position: fixed;
-  right: 1px;
+  right: 10px;
   bottom: 50px;
 }
 
@@ -526,6 +556,8 @@
   bottom: 50px;
 
 }
+
+
 
 
 .post_button {

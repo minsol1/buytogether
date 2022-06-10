@@ -18,7 +18,7 @@ def phome(request):
 
 def p_category(request,category):
     categorys={'food':0,'necessity':1,'ott':2,'delivery':3}
-    posts = Pur.objects.filter(category=categorys[category])
+    posts = Pur.objects.filter(category=categorys[category]).order_by('-id') #최신순 나열
     return render(request,'purbd/category.html',{'category':category,'posts':posts})
 
 def detail(request, post_id):

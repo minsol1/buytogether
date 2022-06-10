@@ -1,51 +1,46 @@
 {% extends 'nav.html' %}
 
 {% block content %}
-<div class="container-fluid">
-   <h3>게시판 글 작성</h3>
-		<form method="POST" role="form" action="{% url 'create' %}">
-        {% csrf_token %}
-        <!-- {{form.as_p}} -->
-        <table>
-            <tbody>
-                <tr>
-                    <td>글 제목</td>
-                    <td>{{form.title}}</td>
-                </tr>
-                <tr>
-                    <td>글 내용</td>
-                    <td>{{form.body}}</td>
-                </tr>
-                <tr>
-                    <td>카테고리</td>
-                    <td>{{form.category}}</td>
-                </tr>
-                <tr>
-                    <td>모집인원</td>
-                    <td>{{form.wpeople}}</td>
-                </tr>
-                <tr>
-                    <td>날짜</td>
-                    <td>{{form.date}}</td>
-                </tr>
-                <tr>
-                    <td>가격</td>
-                    <td>{{form.price}}</td>
-                </tr>
-                <tr>
-                    <td>거래장소</td>
-                    <td>{{form.location}}</td>
-                </tr>
-                <tr>
-                    <td>사진</td>
-                    <td>{{form.photo}}</td>
-                </tr>
-                <tr>
-                    <td><input type="submit" class="btn btn-primary" placeholder="작성">
-                    </input></td>           
-                </tr>
-            </tbody>
-        </table>
-    </form>
+<div class="container">
+    <div style="margin-top: 20px;">
+        <form method="POST" role="form" action="{% url 'create' %}" >
+            {% csrf_token %}
+            <div style = "text-align: right;">
+                <input type="submit" class="btn crt_post_button" placeholder="작성"> </input>
+            </div>
+            <div class="crt_div">
+                <table style="margin:auto;">
+                    <tr>
+                        <td>카테고리 </td><td  colspan="3">{{form.category}}</td>
+                    </tr>
+                    <tr>
+                        <td><label for="title">글 제목</label> </td><td colspan="3">{{form.title}}</td>
+                    </tr>
+                    <tr>
+                        <td><label for="wpeople">모집 인원</label></td> <td>{{form.wpeople}}</td>
+                        <td><label for="price">가격</label></td><td>{{form.price}}</td>
+                    </tr>
+                    <tr>
+                        <td><label for="place">거래장소</label></td> <td style="padding-right: 10px;">{{form.location}}</td>
+                        <td><label for="date" >거래날짜</label></td><td>{{form.date}}</td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="crt_div">
+                <table style="margin:auto;">
+                    <tr>
+                        <td>{{form.body}}</td>
+
+                    </tr>
+                </table>  
+            </div>
+           <div style="margin-top: 10px">
+            {{form.photo}}
+            </div>
+        </form>
+       
+               
+    </div>
 </div>
 {% endblock %}
