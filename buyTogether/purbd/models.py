@@ -1,5 +1,5 @@
 from django.db import models
-
+from accounts.models import User
 # Create your models here.
 
 class Pur(models.Model):
@@ -23,6 +23,9 @@ class Pur(models.Model):
     photo = models.ImageField(blank=True,null=True,upload_to='pur_photo')
     # lat = models.FloatField() #위도
     # long = models.FloatField() #경도
+    ID = models.ForeignKey(User,  on_delete=models.CASCADE,blank=False,
+                                 null=False,
+                                 default="")
     good = models.IntegerField(null=True,default=0)
     def __str__(self):
         return self.title
