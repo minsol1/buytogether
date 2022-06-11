@@ -28,7 +28,7 @@
 
         <h2 id="purbd_detail_price">{{detail.price}}원</h2>
         
-        <p style="word-wrap: break-word; font-size: 20px; margin: 20px 0 0 0;">{{detail.body}}</p>
+        <p class="detail_context">{{detail.body}}</p>
     </div>
     <!-- <hr style="height: 0.5px; border: none; background-color: lightgrey; margin-bottom: 20px; margin: 13px 0;"> -->
 
@@ -46,8 +46,8 @@
                 <td class="detail_td">
                     <div style="font-size: 40px; margin-top: -15px;">{{detail.people}}/{{detail.wpeople}}</div>
 
-                    <button>
-                        <a href="{% url 'auth' %}" style="text-decoration: none; color:black;">참가하기</a>
+                    <button class="new_post_button  ">
+                        <a href="{% url 'auth' %}" style="text-decoration: none; color: white;">참가하기</a>
                     </button>
 
                 </td>
