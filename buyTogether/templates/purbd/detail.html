@@ -1,4 +1,6 @@
+
 {% extends 'nav.html' %}
+
 
 {% block content %}
 <div class="detail_container">
@@ -51,7 +53,7 @@
                         <a href="{% url 'auth' %}" style="text-decoration: none; color: white;">신청자 보기</a>
                     </button>
                     {% else  %}
-                    <button class="new_post_button">
+                    <button class="new_post_button" id="joinBtn" onClick="alert('참가 신청 되었습니다.')">
                         <a href="{# url 'join' user.userID #}" style="text-decoration: none; color: white;">참가하기</a>
                     </button>
                     {% endif %}
