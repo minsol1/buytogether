@@ -43,3 +43,9 @@ def create(request):
 
 def auth(request):
     return render(request,'purbd/auth.html')
+
+# def join(request,user_id):
+#     post = Pur()
+#     post.joinID.append(user_id)
+#     post.save()
+#     return redirect('purhome')
