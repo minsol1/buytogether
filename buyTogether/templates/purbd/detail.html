@@ -28,7 +28,7 @@
 
         <h2 id="purbd_detail_price">{{detail.price}}원</h2>
         
-        <p style="word-wrap: break-word; font-size: 20px; margin: 20px 0 0 0;">{{detail.body}}</p>
+        <p class="detail_context">{{detail.body}}</p>
     </div>
     <!-- <hr style="height: 0.5px; border: none; background-color: lightgrey; margin-bottom: 20px; margin: 13px 0;"> -->
 
@@ -49,6 +49,7 @@
                     {% if detail.ID.userID == user.userID %}
                     <button>
                         <a href="{% url 'auth' %}" style="text-decoration: none; color:black;">신청자 보기</a>
+
                     </button>
                     {% else  %}
                     <button>
