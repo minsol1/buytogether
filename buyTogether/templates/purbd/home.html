@@ -12,72 +12,35 @@
 </div>
 
 <div class="container">
-  <div class="row">
-      
-    <div class="row purbd_home_div_search" >
-      <div class="col-12">
-<<<<<<< HEAD
+  <div class="row purbd_home_div_search" >
+    <div class="col-12">
         <span class='pink_window'>
-            <input type='text' class='input_text' placeholder="Search..." onfocus="this.placeholder=''" onblur="this.placeholder='Search...'"/>
+            <input type='text' class='input_text' placeholder="Serch..." onfocus="this.placeholder=''" onblur="this.placeholder='Serch...'"/>
         </span>
         <button type='submit' class='sch_smit'>검색</button>
-      </div>
     </div>
-=======
-          <span class='pink_window'>
-              <input type='text' class='input_text' placeholder="Serch..." onfocus="this.placeholder=''" onblur="this.placeholder='Serch...'"/>
-          </span>
-          <button type='submit' class='sch_smit'>검색</button>
-      </div>
-   
-      
-    <div class="row justify-content-end" id="fix">
-      <div class="col-sm-6 col-md-4 p-2 purbd_home_div">
-          <button type="button" onClick="location.href='create'" class='post_button'>+</button>
-      </div>
-    </div>
-
   </div>
-
-
-    
-    
->>>>>>> ea5d098a0111269f652ad6ce636c62678841d823
       <div class = "row purbd_home_div_category ">
         <div class = "col-12">
-          <div class="btn-group btn-group-lg">
-            <a href="/purhome" class="btn  catBtn-active" aria-current="page">전체</a>
-            <a href="{% url 'category' 'necessity' %}" class="btn catBtn">생필품</a>
-            <a href="{% url 'category' 'ott' %}" class="btn catBtn">OTT</a>
-            <a href="{% url 'category' 'delivery' %}" class="btn catBtn">배달</a>
-            <a href="{% url 'category' 'food' %}" class="btn catBtn">식료품</a>
-          </div>
-        </div>
-      </div>
-    
-      <div class="row">
-        {% for post in posts %}
-
-        <div class="col-sm-6 col-md-4 p-2 position-relative">
-          <div class="card" style="margin-top: 10px;">
-            <div class="card-header">
-              <h6 style="color: red;"><b>모집중</b></h6>
-            </div>
-            <div class="card-body">
-              <h4 class="card-title purbd_home_title"><a href="{% url 'detail' post.id %}" class="stretched-link" style=" text-decoration : none; color : black;">{{post.title}}</a></h4>
-              <h5 class="card-subtitle mb-2 " style="text-align:left; margin-top: 10px; ">{{post.ID.username}}</h5>
-              <h6 class="card-subtitle mb-2" style="text-align:right"><b>{{post.price}}원</b></h6>
-              
-              <div class="purbd_home_location" ><img src="{%static 'images/location.png' %}" style="padding-right: 5px;  height: 20px; ">{{post.location}}</div>
-              <div  class="purbd_home_meetTime"> <img src="{%static 'images/clock.png' %}" style="padding-right: 10px; height: 18px;">5월 15일 13:00</div>
-            
-            </div> 
-            <div class="card-footer">
-              <div style = "text-align: right;">
-                    <span style="margin-right: 15px;"><img src="{%static 'images/heart.png' %}" style="padding-right: 3px;  height: 20px; "> {{post.good}}  </span>
-                    {{post.people}}<span style="color: red "><b> / {{post.wpeople}}</span></b>
+              <div class="btn-group btn-group-lg">
+                <a href="/purhome" class="btn  catBtn-active" aria-current="page" id="all">전체</a>
+                <a href="{% url 'category' 'necessity' %}" class="btn catBtn" id="necessity">생필품</a>
+                <a href="{% url 'category' 'ott' %}" class="btn catBtn" id="ott">OTT</a>
+                <a href="{% url 'category' 'delivery' %}" class="btn catBtn" id="delivery">배달</a>
+                <a href="{% url 'category' 'food' %}" class="btn catBtn" id="food">식료품</a>
               </div>
+      </div>
+      </div>
+     
 
+      <div class="row">
+       
+        {% for post in posts %}
+        <div class="col-sm-6 col-md-4 p-2 position-relative">
+            <div class="card" style="margin-top: 10px;">
+              <div class="card-header">
+                <h6 style="color: red;"><b>모집중</b></h6>
+              </div>
                 <div class="card-body">
                   <h4 class="card-title purbd_home_title"><a href="{% url 'detail' post.id %}" class="stretched-link" style=" text-decoration : none; color : black;">{{post.title}}</a></h4>
                   <h5 class="card-subtitle mb-2 " style="text-align:left; margin-top: 10px; ">{{post.ID.username}}</h5>
@@ -85,7 +48,7 @@
                  
                   <div class="purbd_home_location" ><img src="{%static 'images/location.png' %}" style="padding-right: 5px;  height: 20px; ">{{post.location}}</div>
                   <div  class="purbd_home_meetTime"> <img src="{%static 'images/clock.png' %}" style="padding-right: 10px; height: 18px;">{{post.date}}</div>
-               
+                
                 </div> 
                 <div class="card-footer">
                   
@@ -96,10 +59,9 @@
                    
                 </div>
           </div>
-
+         
         </div>
         {% endfor %}
-
         <div class="row justify-content-center">       
           <div class="col-sm-6 col-md-3 p-2 purbd_home_div">    
               {%if posts.has_previous%}
