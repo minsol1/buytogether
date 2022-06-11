@@ -80,6 +80,12 @@
     border-right: 1px solid lightgrey;
     border-left: 1px solid lightgrey;
 }
+.detail_context {
+  word-wrap: break-word;
+  font-size: 20px;
+  margin: 20px 0 0 0;
+  line-height: 1;
+}
 .new_post_button {
 	width: 100px; height: 40px;
 	margin: 0; border: 0;
@@ -97,67 +103,57 @@
 
 /* ---------chat---------- */
 .chat_img {
-    width: 60px;
-    height: 60px;
-    border-radius: 10px 10px;
-    background-color: grey;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px 10px;
+  background-color: grey;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .chat_list_text {
-    width: 700px;
-    padding-left: 15px;
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  width: 700px;
+  padding-left: 15px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ---------profile---------- */
 .profile_img {
-    width: 60px;
-    height: 60px;
-    border-radius: 30px 30px;
-    background-color: grey;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px 30px;
+  background-color: grey;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .profile_half_division {
-    width: 435px;
-    height: 500px;
-    border: 1px solid;
-    border-color: lightgrey;
-    border-radius: 10px 10px;
-    margin-bottom: 30px;
-    float: left;
+  width: 435px;
+  height: 500px;
+  border: 1px solid;
+  border-color: lightgrey;
+  border-radius: 10px 10px;
+  margin-bottom: 30px;
+  float: left;
 }
 .division_table {
-    width: 858px;
-    text-align: center;
-    border-collapse: collapse;
+  width: 858px;
+  text-align: center;
+  border-collapse: collapse;
+}
+.half_division_title {
+  padding: 20px;
 }
 .half_division_info {
-    padding: 20px;
+  padding: 20px;
 }
-
-/* ---------join---------- */
-.join_tag {
-    width: 400px;
-
-    margin-left: auto;
-    margin-right: auto;
+.profile_list {
+  font-size: 20px;
 }
-.join_input {
-    width: 400px;
-    height: 50px;
-    
-    margin: 0 265px 20px 265px;
-
-}   
-
 
 /* ---------font---------- */
 
@@ -183,7 +179,7 @@
   color:white;
 }
 
-.{
+.crt_div{
   border:1px solid lightgray;
   border-radius: 10px;
   padding-top: 10px;
@@ -520,45 +516,30 @@
 
 .freebd-home-board{
   width: 35rem; 
-  height: 30rem;
+  height: 15rem;
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
-#fix {
+#fix_AI {
   position: fixed;
-  right: 10px;
-  bottom: 50px;
+  right: 75px;
+  bottom: 140px;
+
 }
 
-#fix_2 {
+#fix_create {
   position: fixed;
-  right: 1px;
-  bottom: 50px;
-}
-
-#fix_11 {
-  position: fixed;
-  right: 70px;
-  bottom: 50px;
-}
-
-#fix_22 {
-  position: fixed;
-  right: 70px;
-  bottom: 50px;
+  right: 75px;
+  bottom: 80px;
 }
 
 #fixed {
   position: fixed;
   right: 40px;
   bottom: 50px;
-
 }
-
-
-
 
 .post_button {
 	width: 50px; height: 50px;

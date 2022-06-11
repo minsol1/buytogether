@@ -55,8 +55,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
 {% block content %}
+<div class="row justify-content-end" id="fix_create">
+  <div class="col-sm-6 col-md-4 p-2 purbd_home_div">
+      <input type="button"  class='post_button' value="+" onClick=" location.href='create'">
+  </div>
+</div>
 <div class="container">
   <div class="row purbd_home_div_search" >
     <div class="col-12">
@@ -92,11 +96,11 @@
               </div>
                 <div class="card-body">
                   <h4 class="card-title purbd_home_title"><a href="{% url 'detail' post.id %}" class="stretched-link" style=" text-decoration : none; color : black;">{{post.title}}</a></h4>
-                  <h5 class="card-subtitle mb-2 " style="text-align:left; margin-top: 10px; ">닉네임</h5>
+                  <h5 class="card-subtitle mb-2 " style="text-align:left; margin-top: 10px; ">{{post.ID.username}}</h5>
                   <h6 class="card-subtitle mb-2" style="text-align:right"><b>{{post.price}}원</b></h6>
                  
                   <div class="purbd_home_location" ><img src="{%static 'images/location.png' %}" style="padding-right: 5px;  height: 20px; ">{{post.location}}</div>
-                  <div  class="purbd_home_meetTime"> <img src="{%static 'images/clock.png' %}" style="padding-right: 10px; height: 18px;">5월 15일 13:00</div>
+                  <div  class="purbd_home_meetTime"> <img src="{%static 'images/clock.png' %}" style="padding-right: 10px; height: 18px;">{{post.date}}</div>
                 
                 </div> 
                 <div class="card-footer">
