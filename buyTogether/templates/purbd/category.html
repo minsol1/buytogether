@@ -121,9 +121,10 @@
               {%if posts.has_next%}
                 <a href="?page={{posts.next_page_number}}"><button type="button" class="btn btn-dark">다음</button></a>&nbsp&nbsp&nbsp
               {%endif%}
-            <span>{{posts.number}}</span>&nbsp
-            <span> of </span>&nbsp
-            <span>{{posts.paginator.num_pages}}</span>&nbsp&nbsp
+              <div style="text-align:center;">
+                <span>{{posts.number}}&nbsp</span>
+                <span>/&nbsp&nbsp{{posts.paginator.num_pages}}</span>
+              </div>
             {%if posts.has_previous%}
                 <a href="?page={{posts.previous_page_number}}"><button type="button" class="btn btn-dark">이전</button></a>&nbsp&nbsp&nbsp
             {%endif%}
