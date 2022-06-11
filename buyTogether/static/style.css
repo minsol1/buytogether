@@ -37,6 +37,16 @@
   margin-left: auto;
   margin-right: auto;
 }
+.detail_division_t {
+  width: 900px;
+  border: 1px solid;
+  border-color: lightgrey;
+  border-radius: 10px 10px;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .detail_lev {
     width: 40px;
     height: 40px;
@@ -70,10 +80,10 @@
 } */
 #purbd_detail_price {
     font-size: 30px;
-    margin: 0;
+    margin: 10px 0 0 0;
 }
 .detail_td {
-    width: 286.3px;
+    width: 299.6px;
     padding: 5px;
 }
 .detail_table_line {
@@ -141,7 +151,7 @@
   float: left;
 }
 .division_table {
-  width: 858px;
+  width: 898px;
   text-align: center;
   border-collapse: collapse;
 }
