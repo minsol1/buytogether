@@ -38,7 +38,7 @@
             <hr style="margin: 0;">
             <div class="half_division_info">
                 {% for post in p_post %}
-                    <a href="{% url 'detail' post.id %}" class="profile_list nav-link nav_change_color">{{post.title}}</a><br>
+                    <br><a href="{% url 'detail' post.id %}" class="profile_list nav-link nav_change_color">{{post.title}}</a>
                 {% endfor %}
             </div>
         </div>
