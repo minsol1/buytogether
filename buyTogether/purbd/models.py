@@ -1,6 +1,6 @@
 from django.db import models
 from accounts.models import User
-#from django.contrib.postgres.fields import ArrayField
+from django.contrib.postgres.fields import ArrayField
 # Create your models here.
 
 class Pur(models.Model):
@@ -28,9 +28,9 @@ class Pur(models.Model):
                                  null=False,
                                  default="")
     good = models.IntegerField(null=True,default=0)
-    # joinID = ArrayField(models.ForeignKey(User,on_delete=models.CASCADE,blank=False,
-    #                              null=False,
-    #                              default="" ))
+    # joinID = ArrayField( 
+    #      models.CharField(max_length=200)
+    # )
     def __str__(self):
         return self.title
     

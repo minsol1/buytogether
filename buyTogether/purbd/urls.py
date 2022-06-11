@@ -8,6 +8,7 @@ urlpatterns = [
     path('create',views.create , name='create'),
     path('detail/<int:post_id>',views.detail,name='detail'),
     path('auth/',views.auth , name='auth'),
+    # path('join/<str:user_id>',views.join , name='join'),
 
   #  path('',views.createpur),
 

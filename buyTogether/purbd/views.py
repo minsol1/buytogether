@@ -35,13 +35,14 @@ def create(request):
             finished_form =form.save(commit=False)
             finished_form.ID=get_object_or_404(User,userID=user_id)
             finished_form.save()
-            return redirect('home')
+            return redirect('purhome')
     else:
         form  = Purmodelform()
     return render(request,'purbd/create.html', {'form':form})
 
 
 def auth(request):
+
     return render(request,'purbd/auth.html')
 
 # def join(request,user_id):
