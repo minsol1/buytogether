@@ -1,14 +1,18 @@
 {% extends 'nav.html' %}
 {% load static %}
 {% block content %}
-<div class="container">
-  <div class="home_video_background">
-    <video class="home_video_detail" src="{%static 'videos/바이투게더.mp4' %}" autoplay loop muted></video>
-  <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/UyrG8jM4T6k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-  </div>
+
+<div class="jb-box">
+  <video muted autoplay loop  width="100%">
+    <source src="{%static 'images/buytogether.mp4' %}" type="video/mp4">
+    <strong>Your browser does not support the video tag.</strong>
+  </video>
 </div>
 
-<section id="gallery" class="home_card_margin">
+<!-- <video src="/buy_together/buyTogether/video/바이투게더.mp4" type="video/mp4" width="100%" height="300px" autoplay muted controls> 
+</video> -->
+
+<section id="gallery">
   <div class="container">
     <div class="row">
       <div class="col-lg-4 mb-4">
@@ -58,4 +62,5 @@
   </div>
 </div>
 </section>
+
 {% endblock %}

@@ -7,6 +7,8 @@ urlpatterns = [
     path('category/<str:category>',views.p_category, name='category'),
     path('create',views.create , name='create'),
     path('detail/<int:post_id>',views.detail,name='detail'),
+    path('auth/',views.auth , name='auth'),
+
   #  path('',views.createpur),
 
 ]

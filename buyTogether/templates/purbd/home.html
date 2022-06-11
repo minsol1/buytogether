@@ -16,6 +16,11 @@
             <button type='submit' class='sch_smit'>검색</button>
         </div>
       </div>
+      <div class="row justify-content-end " id="fixed">
+        <div class="col-sm-6 col-md-4 p-2 purbd_home_div">
+            <button type="button" onClick="location.href='create'" class='post_button'>+</button>
+        </div>
+      </div>
       <div class = "row purbd_home_div_category ">
         <div class = "col-12">
               <div class="btn-group btn-group-lg">
@@ -38,7 +43,7 @@
               </div>
                 <div class="card-body">
                   <h4 class="card-title purbd_home_title"><a href="{% url 'detail' post.id %}" class="stretched-link" style=" text-decoration : none; color : black;">{{post.title}}</a></h4>
-                  <h5 class="card-subtitle mb-2 " style="text-align:left; margin-top: 10px; ">닉네임</h5>
+                  <h5 class="card-subtitle mb-2 " style="text-align:left; margin-top: 10px; ">{{post.ID.username}}</h5>
                   <h6 class="card-subtitle mb-2" style="text-align:right"><b>{{post.price}}원</b></h6>
                  
                   <div class="purbd_home_location" ><img src="{%static 'images/location.png' %}" style="padding-right: 5px;  height: 20px; ">{{post.location}}</div>
@@ -57,7 +62,7 @@
          
         </div>
         {% endfor %}
-       
+
         <div class="row justify-content-end" id="fix_2">
           <div class="col-sm-6 col-md-4 p-2 purbd_home_div">
               <button type="button" onClick="location.href='create'" class='post_button'>+</button>
