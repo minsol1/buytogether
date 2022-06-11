@@ -13,7 +13,7 @@
         </tr>
     </table>
 
-    <div class="detail_division">
+    <div class="detail_division_t">
         <table class="division_table">
             <tr>
                 <td class="detail_td">
@@ -38,11 +38,7 @@
             <hr style="margin: 0;">
             <div class="half_division_info">
                 {% for post in p_post %}
-<<<<<<< HEAD
-                    <a href="{% url 'detail' post.id %}" class="profile_list nav-link nav_change_color">{{post.title}}</a><br>
-=======
                     <br><a href="{% url 'detail' post.id %}" class="profile_list nav-link nav_change_color">{{post.title}}</a>
->>>>>>> 79926363fa1f9f9fbb5492ac321a07440fcd5a82
                 {% endfor %}
             </div>
         </div>
