@@ -1,33 +1,38 @@
 {% extends 'nav.html' %}
 
 {% block content %}
-<div class="container-fluid">
-   <h3>게시판 글 작성</h3>
-		<form method="POST" role="form" action="{% url 'freeCreate' %}">
-        {% csrf_token %}
-     
-        <table>
-            <tbody>
-                <tr>
-                    <td>글 제목</td>
-                    <td>{{form.title}}</td>
-                </tr>
-                <tr>
-                    <td>글 내용</td>
-                    <td>{{form.body}}</td>
-                </tr>
-                <tr>
-                    <td>사진</td>
-                    <td>{{form.photo}}</td>
-                </tr>
-                <tr>
-                    <td><input type="submit" class="btn btn-primary" placeholder="작성">
-                    </input></td>           
-                </tr>
-            </tbody>
-        </table>
-    </form>
+
+<div class="container">
+    <div style="margin-top: 20px;">
+        <form method="POST" role="form" action="{% url 'freeCreate' %}">
+            {% csrf_token %}
+            <div style = "text-align: right;">
+                <input type="submit" class="btn crt_post_button" placeholder="작성"> </input>
+            </div>
+            <div class="crt_div_2">
+                <table style="margin:auto;">
+                    <tr>
+                        <td><label for="title">글 제목</label> </td><td colspan="3">{{form.title}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="crt_div_2" style="margin-top: 10px">
+                <table style="margin:auto;">
+                    <tr>
+                        <td>{{form.body}}</td>
+
+                    </tr>
+                </table>  
+            </div>
+        
+        </form>
+       
+               
+    </div>
 </div>
 {% endblock %}
+
+
+
 
 
