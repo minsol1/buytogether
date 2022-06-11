@@ -19,10 +19,7 @@
         </span>
         <button type='submit' class='sch_smit'>검색</button>
     </div>
-
-
-
-</div>
+  </div>
       <div class = "row purbd_home_div_category ">
         <div class = "col-12">
               <div class="btn-group btn-group-lg">
@@ -37,6 +34,7 @@
      
 
       <div class="row">
+       
         {% for post in posts %}
         <div class="col-sm-6 col-md-4 p-2 position-relative">
             <div class="card" style="margin-top: 10px;">
@@ -64,8 +62,6 @@
          
         </div>
         {% endfor %}
-
-
         <div class="row justify-content-center">       
           <div class="col-sm-6 col-md-3 p-2 purbd_home_div">    
               {%if posts.has_previous%}
