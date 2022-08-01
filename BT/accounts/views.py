@@ -1,37 +1,41 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from rest_framework.exceptions import NotFound
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.permissions import AllowAny
-from allauth.account.models import EmailConfirmation, EmailConfirmationHMAC
+from django.shortcuts import redirect, render
+# from django.contrib.auth.models import User
+from .models import User
+from .forms import UserSignupform,UserLoginform
+from django.contrib import auth
 
+def signup(request):
+    if request.method == "POST":
+        form = UserSignupform(request.POST)
+        if request.POST["password"]==request.POST["password2"]:
+            user = User.objects.create_user(
+                email= request.POST['email'], password=request.POST['password'] ,username = request.POST['username']
+            )
+            auth.login(request,user)
+            return redirect('home')
+        return render(request,'accounts/signup.html',{'form':form})
+    else:
+        form = UserSignupform()
+    return render(request, 'accounts/signup.html',{'form':form})
 
+def login(request):
+    if request.method =="POST":
+        form = UserLoginform(request.POST)
+        email = request.POST['email']
+        password = request.POST['password']
+        user = auth.authenticate(request, email = email, password = password)
+        if user is not None:
+            auth.login(request,user)
+            return redirect('home')
+        else:
+            render(request, 'accounts/bad_login.html',{'form':form})
+    else:
+        form = UserLoginform()
+        return render(request, 'accounts/login.html',{'form':form})
 
-class ConfirmEmailView(APIView):
-    permission_classes = [AllowAny]
+def logout(request):
+    auth.logout(request)
+    return redirect('home')
 
-    def get(self, *args, **kwargs):
-        self.object = confirmation = self.get_object()
-        confirmation.confirm(self.request)
-        # A React Router Route will handle the failure scenario
-        return HttpResponseRedirect('/login/success/')
-
-    def get_object(self, queryset=None):
-        key = self.kwargs['key']
-        email_confirmation = EmailConfirmationHMAC.from_key(key)
-        if not email_confirmation:
-            if queryset is None:
-                queryset = self.get_queryset()
-            try:
-                email_confirmation = queryset.get(key=key.lower())
-            except EmailConfirmation.DoesNotExist:
-                # A React Router Route will handle the failure scenario
-                return HttpResponseRedirect('/login/failure/')
-        return email_confirmation
-
-    def get_queryset(self):
-        qs = EmailConfirmation.objects.all_valid()
-        qs = qs.select_related("email_address__user")
-        return qs
-
+def home(request):
+    return render(request,'home.html')

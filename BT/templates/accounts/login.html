@@ -22,7 +22,7 @@
           {% csrf_token %}
           <div class="form-group">
           <!-- {{form.userID}} -->
-          <input type="text" class="form-control" name="userID"  placeholder="아이디" id="userID" value="{{ form.userID.value | default_if_none:'' }}">
+          <input type="text" class="form-control" name="email"  placeholder="아이디" id="userID" value="{{ form.email.value | default_if_none:'' }}">
           </div>
           <div class="form-group">
           <!-- {{form.password}} -->
